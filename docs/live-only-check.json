@@ -1,87 +1,87 @@
 {
-  "at": "2026-10-25T05:14:16.122Z",
-  "status": "LIVE AI NOT WORKING",
+  "at": "2026-10-25T05:53:55.222Z",
+  "status": "LIVE AI WORKING",
   "fixture": "Isolated authenticated saved Phoenix Tech Solutions business, eight employees. Existing owner records preserved.",
   "provider": {
-    "httpStatus": 503,
-    "provider": "OpenRouter",
-    "liveSucceeded": false,
+    "httpStatus": 200,
+    "provider": "Google Gemini",
     "fallbackUsed": false,
-    "errorCategory": "missing_api_key",
-    "message": "OPENROUTER_API_KEY is missing from the running server."
+    "liveSucceeded": true,
+    "model": "gemini-3.1-flash-lite",
+    "responseId": "YZndavW6PKGz694PvJqFIA"
   },
   "results": [
     {
       "question": "What is my company name?",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "Your company name is Phoenix Tech Solutions."
     },
     {
       "question": "How many employees do I have?",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "You have 8 employees."
     },
     {
       "question": "What happens if I increase my employees to 50?",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "Increasing your team to 50 employees will trigger several new compliance requirements:\n\n*   **EPF & ESI:** You would likely become subject to mandatory Employee Provident Fund (EPF) and Employee State Insurance (ESI) coverage. You must confirm specific establishment exemptions and employee wage eligibility.\n*   **POSH:** Since you would have more than 10 employees, you must constitute an Internal Committee, publish a sexual harassment prevention policy, and train employees.\n*   **Other:** You will need to review Karnataka’s state-specific professional tax and shops/commercial establishment registrations.\n\nWould you like me to estimate the potential additional monthly gross wages for 50 employees?"
     },
     {
       "question": "What is my next compliance deadline?",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "There are no confirmed legal filing deadlines for your business at this time. You currently have several pending tasks marked \"Needs review\" with target dates of November 1, 2026, relating to:\n\n*   Confirming ESI/EPF coverage and potential hazardous activity notifications.\n*   Reconciling PAN-based turnover and supply types for GST.\n*   Reviewing Karnataka professional tax requirements.\n*   Identifying state-specific workplace registration needs.\n\nPlease consult these records to determine if any internal filings are due."
     },
     {
       "question": "What is POSH?",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "POSH refers to the *Sexual Harassment of Women at Workplace (Prevention, Prohibition and Redressal) Act, 2013*. It aims to ensure safe working environments by preventing and addressing sexual harassment. \n\nFor your company, it mandates a specific policy and internal grievance procedures. Once you cross the 10-employee threshold, you are legally required to form an Internal Committee (IC) to handle complaints.\n\nWould you like to review the specific committee composition requirements?"
     },
     {
       "question": "What is EPF?",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "EPF stands for the **Employees' Provident Fund**, a mandatory social security scheme under the *Code on Social Security 2020*. It is designed to provide retirement benefits through monthly contributions from both the employer and the employee.\n\nGenerally, an establishment with 20 or more employees is required to register. Since you currently have 8 employees, you are below this threshold, but you should monitor this as your headcount grows. \n\nWould you like to know if your specific industry sector influences these requirements?"
     },
     {
       "question": "Does hiring more employees increase my GST?",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "Hiring more employees does not directly increase your Goods and Services Tax (GST) payable. GST is a tax on the supply of goods and services, not a tax on the number of employees you have. \n\nYour GST liability depends on factors like your aggregate turnover, the nature of your supplies, and whether you are making inter-state transactions. As your business grows, your turnover may increase, which could eventually bring you under GST registration requirements.\n\nWould you like to calculate an illustrative GST impact based on your specific supplies?"
     },
     {
       "question": "Explain that in simple language.",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "Think of it this way: **Hiring more people doesn't trigger a tax bill.** \n\nGST is only about the *sales* (supplies) your business makes, not the *people* you hire to do the work. However, if your growth leads to more sales and your total yearly revenue (turnover) crosses the government's registration threshold, *then* you will likely need to register for GST. \n\nAre you interested in checking if your current revenue is close to that registration limit?"
     },
     {
       "question": "Write a recipe for chocolate cake.",
-      "httpStatus": 503,
-      "liveSucceeded": false,
+      "httpStatus": 200,
+      "liveSucceeded": true,
       "fallbackUsed": false,
-      "errorCategory": "missing_api_key",
-      "error": "OPENROUTER_API_KEY is missing from the running server."
+      "mode": "live",
+      "message": "I’m designed to help with SME compliance and related business questions. Please ask me about your business obligations, deadlines, registrations or employee changes."
     }
   ],
   "savedProfileUnchanged": true

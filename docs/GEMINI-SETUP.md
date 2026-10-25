@@ -14,7 +14,7 @@ The prepared configuration is:
 ```dotenv
 AI_PROVIDER="gemini"
 GEMINI_API_KEY=""
-GEMINI_MODEL="gemini-3.8-flash"
+GEMINI_MODEL="gemini-3.1-flash-lite"
 NEXTAUTH_URL="http://127.0.0.1:3001"
 ```
 
@@ -33,3 +33,6 @@ The Google key is read only on the server. Authentication, permission, quota, mo
 Unit tests use injected Gemini responses to verify profile context, privacy, conversation history, tool calls and read-only employee-growth simulation. These tests do not prove real model connectivity. Only a successful provider request and authenticated chat responses establish that live AI works.
 
 Current migration status: a fresh private Gemini key is required. Authentication, billing, quota and real model generation cannot be confirmed until that replacement is configured.
+
+## Timeout handling
+The generation adapter retries a transient network/timeout or HTTP 500/502/503/504 failure up to twice, with at most 15 seconds per attempt, within a 50-second total conversation budget. Authentication and quota errors are not retried. The browser allows 65 seconds for authorization, generation and saving history. No local answer is substituted. Broad prompts such as "Growth of the company." ask the live model for clarification without enabling speculative tool calls. A provider outage may still return an explicit error after the retry budget is exhausted.

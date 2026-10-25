@@ -1,6 +1,6 @@
 # ComplianceCopilot
 
-Indian SME growth and compliance decision support, built with Next.js 15, React 19, TypeScript, Tailwind, NextAuth, Prisma and a server-side OpenRouter integration.
+Indian SME growth and compliance decision support, built with Next.js 15, React 19, TypeScript, Tailwind, NextAuth, Prisma and configurable server-side Gemini/OpenRouter integrations.
 
 ## Existing installation: start safely
 
@@ -27,7 +27,7 @@ The current installation explicitly selects persistent SQLite. The Next.js serve
 
 Exactly six primary sections: Overview, Laws for My Business, What I Need to Do, Important Warnings, Plan My Growth, and Ask AI. Calendar, certificates, reports, CSV tools, business history and calculators remain available within the relevant sections or account menu.
 
-OpenRouter is the active AI provider. Set `AI_PROVIDER=openrouter`, server-only `OPENROUTER_API_KEY`, and `OPENROUTER_MODEL` (default `openrouter/auto`) in `.env.local`. Authenticated chat never silently substitutes local answers on provider failure. Public demo guidance is labeled local. See [OpenRouter setup](docs/OPENROUTER-SETUP.md).
+Gemini is currently active: `AI_PROVIDER=gemini`, server-only `GEMINI_API_KEY`, and `GEMINI_MODEL`. OpenRouter remains optional via explicit `AI_PROVIDER=openrouter` and its own key. No automatic provider or local fallback occurs for authenticated chat. See [Gemini setup](docs/GEMINI-SETUP.md).
 
 Deadline monitoring runs on workspace access/update. A protected job endpoint is available for an external scheduler, but no scheduler or email notification service is configured by this project. Sources and calculations are limited and reviewed, not a guarantee of complete current Indian law.
 
@@ -57,4 +57,4 @@ npm run build
 HTTP checks create synthetic accounts and business records in the configured test server. Use a separate test installation when running them outside this local hackathon environment. They do not delete existing owner records. The advisor evaluator refuses metered calls unless `RUN_LIVE_EVAL=true` is explicitly set when a live key is configured. Local checks do not establish live-model quality or tool-selection accuracy.
 
 ## Current AI provider
-OpenRouter is now the active server-side provider. See [OpenRouter setup](docs/OPENROUTER-SETUP.md). Previous Gemini migration notes are historical. Configure OPENROUTER_API_KEY privately; authenticated chat requires a successful live API response.
+Gemini is currently active: `AI_PROVIDER=gemini`, server-only `GEMINI_API_KEY`, and `GEMINI_MODEL`. OpenRouter remains optional via explicit `AI_PROVIDER=openrouter` and its own key. No automatic provider or local fallback occurs for authenticated chat. See [Gemini setup](docs/GEMINI-SETUP.md).

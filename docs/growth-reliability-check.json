@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-25T06:19:53.591Z",
+  "status": "LIVE AI WORKING",
+  "fixture": "Isolated authenticated saved Phoenix Tech Solutions business, eight employees. Existing owner records preserved.",
+  "provider": {
+    "httpStatus": 200,
+    "provider": "Google Gemini",
+    "fallbackUsed": false,
+    "liveSucceeded": true,
+    "model": "gemini-3.1-flash-lite",
+    "responseId": "Y5_dasODJeTH694PopXUsAY"
+  },
+  "results": [
+    {
+      "question": "Growth of the company.",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "message": "To assist with the compliance requirements for Phoenix Tech Solutions, could you please clarify which growth dimension you are targeting? Are you looking to scale your number of employees, annual turnover, operational branches, or export activities? This will help me identify the relevant regulatory thresholds for you."
+    },
+    {
+      "question": "Growth of the company.",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "message": "To provide accurate compliance guidance for Phoenix Tech Solutions, please clarify your growth focus. Are you aiming to scale your **employee headcount**, **annual turnover**, **number of branches**, or **export operations**? Defining this dimension is necessary to identify the relevant legal thresholds and regulatory implications for your company."
+    },
+    {
+      "question": "What happens if I increase my employees to 50?",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "message": "Increasing your headcount to 50 triggers several compliance requirements for Phoenix Tech Solutions:\n\n*   **Employee Benefits:** You will likely need to register for the Employees' Provident Fund (EPF) as you have crossed the 20-person threshold, and confirm Employee State Insurance (ESI) coverage for eligible employees.\n*   **Workplace Safety:** You are required to constitute an Internal Committee (IC) under the POSH Act, as you have reached the 10-employee threshold per workplace.\n*   **State Compliance:** You should review Karnataka's professional tax and local shop/establishment registration requirements for your workplace.\n\nWould you like me to explain the steps for setting up an Internal Committee for your office?"
+    },
+    {
+      "question": "Explain that in simple language.",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "message": "When you reach 50 employees, the law requires you to take extra steps to protect and support your staff:\n\n*   **Safety (POSH Act):** You must form an \"Internal Committee\" to handle any complaints of sexual harassment. This committee must have a senior woman employee as the head and an external member from an NGO or legal background.\n*   **Benefits (EPF/ESI):** Since you are well over the 20-employee limit, you must provide EPF (retirement savings) and ESI (health insurance) for eligible staff.\n*   **Documentation:** You must maintain strict attendance records, wage registers, and employment contracts for all 50 people to remain compliant with labor laws.\n\nWould you like help calculating the approximate additional monthly wage cost for these 42 new employees?"
+    },
+    {
+      "question": "Write a recipe for chocolate cake.",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "message": "I’m designed to help with SME compliance and related business questions. Please ask me about your business obligations, deadlines, registrations or employee changes."
+    }
+  ],
+  "savedProfileUnchanged": true
+}
