@@ -1,0 +1,22 @@
+export const locations:Record<string,string[]>={
+ 'Maharashtra':['Mumbai','Pune','Nagpur','Nashik','Thane','Other city'],
+ 'Karnataka':['Bengaluru','Mysuru','Mangaluru','Hubballi','Other city'],
+ 'Telangana':['Hyderabad','Warangal','Nizamabad','Other city'],
+ 'Tamil Nadu':['Chennai','Coimbatore','Madurai','Other city'],
+ 'Gujarat':['Ahmedabad','Surat','Vadodara','Rajkot','Other city'],
+ 'Delhi':['New Delhi','Delhi','Other city'],
+ 'Uttar Pradesh':['Noida','Lucknow','Kanpur','Ghaziabad','Other city'],
+ 'West Bengal':['Kolkata','Howrah','Siliguri','Other city'],
+ 'Kerala':['Kochi','Thiruvananthapuram','Kozhikode','Other city'],
+ 'Rajasthan':['Jaipur','Jodhpur','Udaipur','Other city'],
+ 'Andhra Pradesh':['Visakhapatnam','Vijayawada','Guntur','Other city'],
+ 'Madhya Pradesh':['Indore','Bhopal','Gwalior','Other city'],
+ 'Bihar':['Patna','Gaya','Other city'],'Punjab':['Ludhiana','Amritsar','Other city'],'Haryana':['Gurugram','Faridabad','Other city'],
+ 'Odisha':['Bhubaneswar','Cuttack','Other city'],'Assam':['Guwahati','Dibrugarh','Other city'],'Goa':['Panaji','Margao','Other city'],
+ 'Chhattisgarh':['Raipur','Bilaspur','Other city'],'Jharkhand':['Ranchi','Jamshedpur','Other city'],'Uttarakhand':['Dehradun','Haridwar','Other city'],
+ 'Himachal Pradesh':['Shimla','Solan','Other city'],'Tripura':['Agartala','Other city'],'Manipur':['Imphal','Other city'],
+ 'Mizoram':['Aizawl','Other city'],'Nagaland':['Kohima','Dimapur','Other city'],'Meghalaya':['Shillong','Other city'],
+ 'Sikkim':['Gangtok','Other city'],'Arunachal Pradesh':['Itanagar','Other city'],'Puducherry':['Puducherry','Other city'],
+ 'Jammu and Kashmir':['Srinagar','Jammu','Other city'],'Ladakh':['Leh','Other city'],'Chandigarh':['Chandigarh','Other city'],
+ 'Andaman and Nicobar Islands':['Sri Vijaya Puram','Other city'],'Lakshadweep':['Kavaratti','Other city'],'Dadra and Nagar Haveli and Daman and Diu':['Daman','Silvassa','Other city']
+};

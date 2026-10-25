@@ -1,0 +1,3 @@
+import {authorizedWorkspace,errorResponse} from '@/lib/api';
+import {reportData,buildReport} from '@/lib/report';
+export async function GET(req:Request,ctx:{params:Promise<{id:string}>}){try{const {id}=await ctx.params;const {workspace}=await authorizedWorkspace(id);if(new URL(req.url).searchParams.get('format')==='json')return Response.json(reportData(workspace),{headers:{'Cache-Control':'private, no-store'}});return new Response(buildReport(workspace),{headers:{'Content-Type':'application/pdf','Content-Disposition':'attachment; filename="compliance-growth-report.pdf"','Cache-Control':'private, no-store'}});}catch(e){return errorResponse(e)}}

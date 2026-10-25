@@ -1,0 +1,11 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {mkdtempSync} from 'node:fs';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import {chunkText,indexDocument,searchIndexedKnowledge} from '../lib/legal-index';
+import {legalKnowledge} from '../lib/legal-knowledge';
+process.env.LEGAL_INDEX_PATH=join(mkdtempSync(join(tmpdir(),'copilot-legal-index-test-')),'knowledge.sqlite');
+test('curated full text retrieval returns authority and review metadata',()=>{const found=searchIndexedKnowledge('credit utilization');assert.ok(found.some(x=>x.record.id==='GST-CREDIT'));assert.ok(found.every(x=>x.record.verifiedAt));assert.ok(chunkText('a'.repeat(2200)).length>=3)});
+test('draft and superseded ingested content cannot enter assistant retrieval',()=>{const record={...legalKnowledge[0],id:'DOC-TEST',status:'draft' as const};indexDocument(record,'uniquecandidateterm');assert.equal(searchIndexedKnowledge('uniquecandidateterm').length,0);indexDocument({...record,status:'reviewed',version:2},'uniquecandidateterm','Test reviewer');assert.equal(searchIndexedKnowledge('uniquecandidateterm')[0]?.record.id,'DOC-TEST');indexDocument({...record,status:'superseded',version:3},'uniquecandidateterm','Test reviewer');assert.equal(searchIndexedKnowledge('uniquecandidateterm').length,0)});
+test('unregistered source hosts rejected and FTS query syntax is never executed',()=>{assert.throws(()=>indexDocument({...legalKnowledge[0],id:'DOC-BAD',url:'https://example.test/unverified'},'content'),/official HTTPS/);assert.doesNotThrow(()=>searchIndexedKnowledge('" OR * DROP TABLE -- credit'))});

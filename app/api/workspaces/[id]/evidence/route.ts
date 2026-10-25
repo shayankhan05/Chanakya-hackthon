@@ -1,0 +1,11 @@
+import {NextResponse} from 'next/server';
+import {randomUUID} from 'node:crypto';
+import {mkdir,writeFile,unlink} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {authorizedWorkspace,errorResponse,sameOrigin} from '@/lib/api';
+import {saveWorkspace,AppError} from '@/lib/repository';
+import {evidenceMime} from '@/lib/evidence-validation';
+import {monitor} from '@/lib/engine';
+export async function POST(req:Request,ctx:{params:Promise<{id:string}>}){try{sameOrigin(req);if(Number(req.headers.get('content-length')||0)>2200000)throw new AppError('Maximum upload size is 2 MB.',413);const {id}=await ctx.params;const {user,workspace}=await authorizedWorkspace(id);const form=await req.formData();const file=form.get('file');const task=workspace.tasks.find(t=>t.id===form.get('taskId'));if(!task||!(file instanceof File))throw new AppError('Choose a task and an evidence file.');if(file.size>2*1024*1024)throw new AppError('Maximum upload size is 2 MB.');const buffer=Buffer.from(await file.arrayBuffer());let mime:string;try{mime=evidenceMime(buffer,file.type);}catch(e){throw new AppError(e instanceof Error?e.message:'Invalid file.');}const docId=randomUUID();const folder=resolve(process.env.UPLOAD_PATH||'.data/uploads');await mkdir(folder,{recursive:true});const path=resolve(folder,docId);await writeFile(path,buffer,{flag:'wx'});workspace.documents.push({id:docId,taskId:task.id,name:file.name.replace(/[^\w. -]/g,'_').slice(0,120),mime,size:file.size,uploadedAt:new Date().toISOString()});task.evidence.push(docId);if(task.completion){task.completion.evidenceIds=[...new Set([...task.completion.evidenceIds,docId])];if(task.completion.state==='Declared by owner')task.completion.state='Proof submitted';}task.history=[...(task.history||[]),{at:new Date().toISOString(),actor:user.name||'Business owner',action:'Evidence uploaded',completedOn:task.completion?.completedOn,dueDate:task.legalDueDate,detail:'Document submitted; not automatically reviewed or legally confirmed.'}];try{return NextResponse.json({workspace:await saveWorkspace(user.id,monitor(workspace,new Date().toISOString()),workspace.revision,'evidence-upload')});}catch(e){await unlink(path);throw e;}}catch(e){return errorResponse(e)}}
+
+

@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-25T00:32:47.992Z",
+  "origin": "http://127.0.0.1:3001",
+  "fixture": "Authenticated synthetic business saved through the real onboarding API; no existing owner account was impersonated.",
+  "liveConfigured": false,
+  "liveModelSucceeded": false,
+  "testsPassed": 4,
+  "profileUnchanged": true,
+  "results": [
+    {
+      "question": "What is my company name?",
+      "passed": true,
+      "mode": "knowledge-base",
+      "message": "Your company's saved name is Saved Context Verification 7fddda6f.",
+      "words": 9
+    },
+    {
+      "question": "How many employees do I have?",
+      "passed": true,
+      "mode": "knowledge-base",
+      "message": "Your current saved employee count is 10. A hypothetical hiring conversation does not change that number.",
+      "words": 16
+    },
+    {
+      "question": "When did I start my business?",
+      "passed": true,
+      "mode": "knowledge-base",
+      "message": "Your saved business start date is 1 April 2024.",
+      "words": 9
+    },
+    {
+      "question": "What happens if my employees increase to 50?",
+      "passed": true,
+      "mode": "knowledge-base",
+      "message": "Planning only; saved records stay unchanged.\nEmployee count: 10 → 50 (+40 people)\nEPF: Potentially applicable; check eligibility and exceptions.\nESI: Potentially applicable; check eligibility and exceptions.\nPOSH: Applicable; check eligibility and exceptions.\nGST: Not applicable; check eligibility and exceptions.\nHiring alone does not increase GST. Review the full comparison for missing facts.",
+      "words": 53
+    }
+  ]
+}

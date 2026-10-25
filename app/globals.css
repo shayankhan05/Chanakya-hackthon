@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root{color-scheme:light}body{margin:0;background:#f8fafc;color:#17233b;font-family:Arial,Helvetica,sans-serif;font-size:14px}button,a,input,select{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible{outline:2px solid #6366f1;outline-offset:3px}input,select{outline:none}input:focus,select:focus{box-shadow:0 0 0 2px #c7d2fe} .panel{background:white;border:1px solid #e7eaf0;border-radius:12px;box-shadow:0 2px 3px #182b4a02}.muted{color:#8490a4}.tag{display:inline-flex;align-items:center;gap:5px;border-radius:5px;padding:4px 8px;font-size:11px;font-weight:500}.field{width:100%;border:1px solid #dfe3ec;border-radius:7px;padding:10px 12px;background:white;color:#334155}.sidebar-scroll{scrollbar-width:thin} @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}main{animation:rise .3s ease} ::selection{background:#e0e7ff} 
+
+.account-item { display:block; width:100%; text-align:left; padding:.7rem .8rem; border-radius:.5rem; font-size:.8rem; color:#334155; }
+.account-item:hover { background:#eef2ff; color:#4338ca; }
+button, a, input, select, summary { outline-offset:4px; }
+@media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }

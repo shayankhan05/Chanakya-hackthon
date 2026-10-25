@@ -1,0 +1,2809 @@
+[
+  {
+    "id": 1,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What is my company name?",
+    "expectedFacts": [
+      "Saved company name"
+    ],
+    "requiredTools": [
+      "read_business_records:profile"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Phoenix Tech Solutions",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 2,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "How many employees do I currently have?",
+    "expectedFacts": [
+      "Saved total is 10"
+    ],
+    "requiredTools": [
+      "read_business_records:profile"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "count is 10",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 3,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Where is my company located?",
+    "expectedFacts": [
+      "Saved city and state"
+    ],
+    "requiredTools": [
+      "read_business_records:profile"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Bengaluru, Karnataka",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 4,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What kind of business do I run?",
+    "expectedFacts": [
+      "Industry and business type"
+    ],
+    "requiredTools": [
+      "read_business_records:profile"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "IT services",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 5,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What is my current annual turnover?",
+    "expectedFacts": [
+      "Annual turnover is INR 1800000, not tax"
+    ],
+    "requiredTools": [
+      "read_business_records:profile"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "18,00,000",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 6,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Am I registered for GST?",
+    "expectedFacts": [
+      "GST declaration is false, not portal verified"
+    ],
+    "requiredTools": [
+      "read_business_records:profile"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "No",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 7,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "How many branches does my company have?",
+    "expectedFacts": [
+      "One workplace"
+    ],
+    "requiredTools": [
+      "read_business_records:profile"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "1 recorded workplace",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 8,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What important information is missing from my business profile?",
+    "expectedFacts": [
+      "Only missing fields identified by rules"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Still to confirm",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 9,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What happens if my employees increase from 10 to 50?",
+    "expectedFacts": [
+      "New total 50, addition 40; no profile writes"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model",
+      "Treat total 50 as 50 extra employees"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Employee count: 10 → 50",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 10,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What if I hire 20 more employees?",
+    "expectedFacts": [
+      "Add 20, do not replace total with 20"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Employee count: 10 → 30",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 11,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 30,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 30
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "Yes",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What if I reduce my workforce from 30 to 12?",
+    "expectedFacts": [
+      "Existing EPF coverage remains relevant"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result",
+      "Retain established EPF coverage below 20"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Employee count: 30 → 12",
+    "requiresLiveModel": false,
+    "additionalChecks": [
+      "coverage is retained|coverage.*retained"
+    ]
+  },
+  {
+    "id": 12,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Do I need EPF registration?",
+    "expectedFacts": [
+      "Headcount and coverage, no automatic certainty"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "20|threshold|coverage",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 13,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Do ESI rules apply to my company?",
+    "expectedFacts": [
+      "Establishment and wage eligibility, not only count"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "wage|eligib|notification",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 14,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What is POSH in simple language?",
+    "expectedFacts": [
+      "Explain workplace sexual harassment prevention"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "sexual harassment",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 15,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Do I need a workplace complaints committee?",
+    "expectedFacts": [
+      "Workplace-specific staffing and Local Committee route"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Internal Committee|ten",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 16,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "How much might 10 additional employees cost?",
+    "expectedFacts": [
+      "Ask for wages; no invented contribution total"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "estimate_employee_costs after wage clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "average monthly wage",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 17,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Does hiring more employees increase my GST?",
+    "expectedFacts": [
+      "Separate payroll from GST liability"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Hiring alone does not determine GST",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 18,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What should I do before hiring 40 people?",
+    "expectedFacts": [
+      "Relevant preparations and missing facts"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "EPF|ESI|Committee",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 19,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What happens if my turnover doubles?",
+    "expectedFacts": [
+      "Double saved turnover, not headcount"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Annual turnover: ₹18,00,000.00 → ₹36,00,000.00",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 20,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What if my sales cross the GST registration threshold?",
+    "expectedFacts": [
+      "Supply type, state, exceptions and PAN aggregation"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "GST|turnover",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 21,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What changes if I open a branch in Maharashtra?",
+    "expectedFacts": [
+      "Add branch; staffing and location review"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Branch count: 1 → 2",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 22,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What if I start exporting services?",
+    "expectedFacts": [
+      "IEC depends on service export and FTP benefits"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Export activity: false → true",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 23,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Can I grow to 100 employees without new registrations?",
+    "expectedFacts": [
+      "Read-only growth; EPF, ESI and POSH checks"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Employee count: 10 → 100",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 24,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What would change if I opened three new offices?",
+    "expectedFacts": [
+      "Ask locations; do not invent states"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Which state|which state",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 25,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Compare my current business with a company twice its size.",
+    "expectedFacts": [
+      "Clarify ambiguous size"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "twice.*employees|twice.*turnover",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 26,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What should I prepare before expanding next year?",
+    "expectedFacts": [
+      "Preparation guidance, no invented future law"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Next:|Confirm",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 27,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Explain GST like I'm a beginner.",
+    "expectedFacts": [
+      "GST basics, no payroll-based tax"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Goods|Services|supply|supplies|turnover",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 28,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What is the difference between EPF and ESI?",
+    "expectedFacts": [
+      "Different purposes and eligibility"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "retirement|insurance",
+    "requiresLiveModel": false,
+    "additionalChecks": [
+      "retirement",
+      "insurance"
+    ]
+  },
+  {
+    "id": 29,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What is Professional Tax?",
+    "expectedFacts": [
+      "Karnataka source; no Maharashtra substitution"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "state tax|Karnataka",
+    "requiresLiveModel": false,
+    "additionalChecks": [
+      "Karnataka"
+    ]
+  },
+  {
+    "id": 30,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What are Shops and Establishments rules?",
+    "expectedFacts": [
+      "State-specific workplace registration"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Karnataka|state",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 31,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Which laws might apply to my company?",
+    "expectedFacts": [
+      "Use actual screening and missing facts"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "EPF|ESI|Committee",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 32,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Can you explain why this law applies to me?",
+    "expectedFacts": [
+      "Ask which law without prior topic"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": true,
+    "history": [],
+    "localCheck": "Which law",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 33,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What documents do I need for this registration?",
+    "expectedFacts": [
+      "Ask registration without prior topic"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": true,
+    "history": [],
+    "localCheck": "Which law|registration do you mean",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 34,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Which important rules should I review first?",
+    "expectedFacts": [
+      "Prioritize actual relevant findings"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "EPF|ESI|Committee",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 35,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What is my next legal deadline?",
+    "expectedFacts": [
+      "No verified date in fixture; do not invent one"
+    ],
+    "requiredTools": [
+      "read_business_records:tasks"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "No upcoming verified legal deadline",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 36,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Do I have any overdue tasks?",
+    "expectedFacts": [
+      "Preparation targets do not prove legal overdue"
+    ],
+    "requiredTools": [
+      "read_business_records:tasks"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "No unfinished task.*verified overdue",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 37,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What happens if I miss a GST filing deadline?",
+    "expectedFacts": [
+      "No blanket penalty; verify return and period"
+    ],
+    "requiredTools": [
+      "read_business_records:tasks"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "needs confirmation|No deadlines|late|return",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 38,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "How much could a late filing cost me?",
+    "expectedFacts": [
+      "Request conditions before estimating fees"
+    ],
+    "requiredTools": [
+      "read_business_records:tasks"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "return|period|conditions",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 39,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "I completed the registration but forgot to upload proof. Am I overdue?",
+    "expectedFacts": [
+      "Missing proof is not proof of late action"
+    ],
+    "requiredTools": [
+      "read_business_records:tasks"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "actual.*completion date|actual action completion date",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 40,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "I submitted the certificate three days late. What happens?",
+    "expectedFacts": [
+      "Distinguish action date from upload date"
+    ],
+    "requiredTools": [
+      "read_business_records:tasks"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "actual.*completion date|actual action completion date",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 41,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Which of my pending tasks is most urgent?",
+    "expectedFacts": [
+      "Highest urgency recorded task, not random law"
+    ],
+    "requiredTools": [
+      "read_business_records:tasks"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "next task",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 42,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What did we discuss about hiring 50 employees?",
+    "expectedFacts": [
+      "Recall earlier target of 50, not saved headcount"
+    ],
+    "requiredTools": [
+      "conversation history",
+      "read_business_records:profile when comparing"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": true,
+    "history": [
+      "What if my employees increase to 50?"
+    ],
+    "localCheck": "Employee count: 10 → 50",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 43,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "How would that affect my monthly costs?",
+    "expectedFacts": [
+      "Maintain hiring context; request wage"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "estimate_employee_costs after wage clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": true,
+    "history": [
+      "What if my employees increase to 50?"
+    ],
+    "localCheck": "average monthly wage",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 44,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Explain that more simply.",
+    "expectedFacts": [
+      "Simplify previous answer"
+    ],
+    "requiredTools": [
+      "conversation history",
+      "read_business_records:profile when comparing"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": true,
+    "history": [
+      "What if my employees increase to 50?"
+    ],
+    "localCheck": "short version|simpler",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 45,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Tell me the same thing in Hindi.",
+    "expectedFacts": [
+      "Real-model translation required; local mode must disclose limit"
+    ],
+    "requiredTools": [
+      "conversation history"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": true,
+    "history": [
+      "What if my employees increase to 50?"
+    ],
+    "localCheck": "[ऀ-ॿ]",
+    "requiresLiveModel": true
+  },
+  {
+    "id": 46,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Give me a checklist for the expansion.",
+    "expectedFacts": [
+      "Grounded practical checklist"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": true,
+    "history": [
+      "What if my employees increase to 50?"
+    ],
+    "localCheck": "Next:|prepare",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 47,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What changes if my business moves from Karnataka to Delhi?",
+    "expectedFacts": [
+      "State-specific review; no records changed"
+    ],
+    "requiredTools": [
+      "read_business_records:profile",
+      "simulate_business_growth OR check_applicable_rules OR clarification"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Delhi|state-specific",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 48,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "What happens if I ask you about a law you don't know?",
+    "expectedFacts": [
+      "Disclose unknown law, never fabricate"
+    ],
+    "requiredTools": [
+      "search_legal_catalogue",
+      "read_business_records:findings when personalized"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "not.*invent|limited local|outside|cannot",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 49,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Can you explain this warning on my dashboard?",
+    "expectedFacts": [
+      "Ground warning in actual records or ask which"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "EPF|ESI|Committee|which warning",
+    "requiresLiveModel": false
+  },
+  {
+    "id": 50,
+    "profile": {
+      "name": "Phoenix Tech Solutions",
+      "businessType": "Private limited company",
+      "industry": "IT services",
+      "state": "Karnataka",
+      "city": "Bengaluru",
+      "employees": 10,
+      "turnover": 1800000,
+      "investment": 400000,
+      "branches": 1,
+      "branchLocations": [
+        {
+          "state": "Karnataka",
+          "city": "Bengaluru",
+          "employees": 10
+        }
+      ],
+      "eligibleEsiEmployees": 4,
+      "priorEpf": "No",
+      "priorEsi": "No",
+      "taxableSupplies": "Yes",
+      "gstExceptions": "No",
+      "interstate": "No",
+      "seasonalFactory": "No",
+      "hazardous": "No",
+      "gst": false
+    },
+    "question": "Looking at my company overall, what should I focus on this month?",
+    "expectedFacts": [
+      "Focus on relevant requirements, no made-up due date"
+    ],
+    "requiredTools": [
+      "read_business_records:findings",
+      "read_business_records:warnings"
+    ],
+    "legalChecks": [
+      "Use applicable jurisdiction, eligibility and effective dates",
+      "No invented legal date, fee, tax, registration or filing result"
+    ],
+    "responseCharacteristics": [
+      "Direct everyday English",
+      "Normally 40–80 words; details expandable",
+      "At most one useful follow-up"
+    ],
+    "prohibitedMistakes": [
+      "Overwrite saved profile during hypothetical discussion",
+      "Use another business data",
+      "Claim local response came from online model"
+    ],
+    "followUpNeeded": false,
+    "history": [],
+    "localCheck": "Next:|EPF|ESI|Committee",
+    "requiresLiveModel": false
+  }
+]

@@ -1,0 +1,11 @@
+import {blankProfile,type Workspace,type BusinessProfile} from './domain';
+import {catalogueVersion} from './legal-catalogue';
+import {evaluateBusiness,reconcileWorkspace} from './engine';
+export function emptyWorkspace(id:string,ownerName:string,demo=false,at=new Date().toISOString()):Workspace{return {id,revision:0,ownerName,profile:structuredClone(blankProfile),findings:[],tasks:[],events:[],resources:[],notices:[],messages:[],documents:[],evaluatedAt:at,rulesVersion:catalogueVersion,demo};}
+export function demoWorkspace(kind='it',at=new Date().toISOString()):Workspace{
+ const examples:Record<string,Partial<BusinessProfile>>={judge:{name:'Phoenix Tech Solutions',state:'Karnataka',city:'Bengaluru',employees:8,turnover:1800000,investment:400000,branchLocations:[{state:'Karnataka',city:'Bengaluru',employees:8}]},it:{name:'Acme Technologies',industry:'IT services',employees:18,turnover:1800000,investment:400000,supplies:'Services',gst:false,branches:1,branchLocations:[{state:'Maharashtra',city:'Pune',employees:18}]},manufacturing:{name:'Pragati Precision Works',industry:'Manufacturing',establishment:'Factory',employees:24,turnover:4500000,investment:18000000,supplies:'Goods',branches:1,branchLocations:[{state:'Maharashtra',city:'Pune',employees:24}]},expansion:{name:'Horizon Business Services',employees:18,turnover:1800000,investment:600000,supplies:'Services',interstate:'Yes',branches:1,branchLocations:[{state:'Maharashtra',city:'Pune',employees:18}]}};
+ const p:BusinessProfile={...structuredClone(blankProfile),...examples[kind]||examples.it,priorEpf:'No',priorEsi:'No',hazardous:'No',seasonalFactory:'No',epfExempt:'Unknown',taxableSupplies:'Yes',gstExceptions:'No',interstate:kind==='expansion'?'Yes':'No',startDate:'2024-04-01',eligibleEsiEmployees:kind==='judge'?4:12};
+ const base=emptyWorkspace('demo-'+kind,'Demo business owner',true,at);const w=reconcileWorkspace(base,p,'Demo owner',at,'demo-initial');
+ w.events=[];w.notices=[];w.findings=evaluateBusiness(p,at.slice(0,10));
+ w.resources=[{id:'demo-license',kind:'License',name:'Sample local trade license',ruleId:'LICENSE',number:'SAMPLE-NOT-VALID',registeredAt:'2025-11-01',expiresAt:new Date(Date.parse(at)+19*86400000).toISOString().slice(0,10),reminderDays:30,status:'Active'}];return w;
+}

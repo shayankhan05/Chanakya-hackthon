@@ -1,0 +1,2 @@
+import DeadlineDemo from '@/components/deadline-demo';
+export default function DeadlineDemoPage(){return <main className="max-w-6xl mx-auto p-5 sm:p-10"><a href="/demo" className="text-indigo-600 text-sm">← Back to sample business</a><div className="my-6"><h1 className="text-2xl font-semibold">Deadline demonstration</h1><p className="text-sm text-slate-500 mt-2">Isolated sample dates and records. This does not change any business account.</p></div><DeadlineDemo/></main>}

@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-25T05:14:16.122Z",
+  "status": "LIVE AI NOT WORKING",
+  "fixture": "Isolated authenticated saved Phoenix Tech Solutions business, eight employees. Existing owner records preserved.",
+  "provider": {
+    "httpStatus": 503,
+    "provider": "OpenRouter",
+    "liveSucceeded": false,
+    "fallbackUsed": false,
+    "errorCategory": "missing_api_key",
+    "message": "OPENROUTER_API_KEY is missing from the running server."
+  },
+  "results": [
+    {
+      "question": "What is my company name?",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "How many employees do I have?",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "What happens if I increase my employees to 50?",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "What is my next compliance deadline?",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "What is POSH?",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "What is EPF?",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "Does hiring more employees increase my GST?",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "Explain that in simple language.",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    },
+    {
+      "question": "Write a recipe for chocolate cake.",
+      "httpStatus": 503,
+      "liveSucceeded": false,
+      "fallbackUsed": false,
+      "errorCategory": "missing_api_key",
+      "error": "OPENROUTER_API_KEY is missing from the running server."
+    }
+  ],
+  "savedProfileUnchanged": true
+}

@@ -1,0 +1,16 @@
+import Dashboard from '@/components/v1-dashboard';
+import {db,demoMode} from '@/lib/db';
+import {getServerSession} from 'next-auth';
+import {authOptions} from '@/lib/auth';
+import {initialProfile,initialTasks,type Profile,type Task} from '@/lib/data';
+export const dynamic='force-dynamic';
+export default async function Page(){
+ if(demoMode)return <Dashboard demo initialBusiness={initialProfile} initialWork={initialTasks}/>;
+ const session=await getServerSession(authOptions);
+ const user=session?.user?.email?await db.user.findUnique({where:{email:session.user.email},include:{profile:{include:{tasks:true,registrations:true}}}}):null;
+ const p=user?.profile;
+ const business:Profile=p?{name:p.name,industry:p.industry,state:p.state,employees:p.employees,turnover:p.turnover,gst:p.gst,branches:p.branches,firstExport:p.firstExport,registrations:p.registrations.map(r=>r.name)}:{name:'Your business',industry:'Services',state:'Maharashtra',employees:0,turnover:0,gst:false,branches:1,firstExport:false,registrations:[]};
+ const tasks:Task[]=p?p.tasks.map(t=>({id:t.id,title:t.title,law:t.law,due:t.due.toISOString().slice(0,10),priority:t.priority as Task['priority'],status:t.status as Task['status'],description:t.description,documents:t.documents,penalty:t.penalty,duration:t.duration})):[];
+ return <Dashboard demo={false} initialBusiness={business} initialWork={tasks}/>;
+}
+

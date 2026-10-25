@@ -1,0 +1,10 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+import {join} from 'node:path';
+import {tmpdir} from 'node:os';
+process.env.STORAGE_DRIVER='sqlite';process.env.SQLITE_PATH=join(tmpdir(),'copilot-test-'+randomUUID()+'.sqlite');
+import {createAccount,findAccount,createWorkspace,loadWorkspace,saveWorkspace,ownWorkspace,storeReset,redeemReset,accountById} from '../lib/repository';
+import {hashPassword,verifyPassword,tokenHash} from '../lib/passwords';
+import {emptyWorkspace} from '../lib/workspace';
+test('SQLite integration: passwords business isolation revisions and reset token lifecycle',async()=>{const password='Test-password-12345';const hash=await hashPassword(password);assert.notEqual(hash,password);assert.equal(await verifyPassword(password,hash),true);assert.equal(await verifyPassword('wrong-password',hash),false);const a=await createAccount('alice@example.test','Alice',hash),b=await createAccount('bob@example.test','Bob',hash);assert.equal((await findAccount(a.email))?.id,a.id);assert.equal(await ownWorkspace(b.id),null);const w=emptyWorkspace(randomUUID(),'Alice');await createWorkspace(a.id,w);assert.equal((await loadWorkspace(a.id,w.id)).id,w.id);await assert.rejects(loadWorkspace(b.id,w.id),/denied/);const saved=await saveWorkspace(a.id,{...w,ownerName:'Alice Updated'},0,'test');assert.equal(saved.revision,1);await assert.rejects(saveWorkspace(a.id,w,0,'stale'),/changed/);await assert.rejects(saveWorkspace(b.id,w,1,'unauthorized'),/denied/);const reset='test-'+randomUUID();await storeReset(tokenHash(reset),a.id,Date.now()+10000);await redeemReset(tokenHash(reset),await hashPassword('New-password-12345'));assert.equal((await accountById(a.id))!.authVersion,1);assert.equal(await verifyPassword('New-password-12345',(await findAccount(a.email))!.passwordHash!),true);await assert.rejects(redeemReset(tokenHash(reset),hash),/invalid/);await storeReset(tokenHash('expired'),b.id,Date.now()-10);await assert.rejects(redeemReset(tokenHash('expired'),hash),/invalid/);});

@@ -1,0 +1,165 @@
+generator client {
+ provider = "prisma-client-js"
+}
+datasource db {
+ provider = "postgresql"
+ url = env("DATABASE_URL")
+}
+model User {
+ id String @id @default(cuid())
+ email String @unique
+ name String?
+ profile SMEProfile?
+ createdAt DateTime @default(now())
+}
+model SMEProfile {
+ id String @id @default(cuid())
+ userId String @unique
+ user User @relation(fields:[userId], references:[id], onDelete:Cascade)
+ name String
+ industry String
+ state String
+ employees Int
+ turnover Float
+ gst Boolean @default(false)
+ branches Int @default(1)
+ firstExport Boolean @default(false)
+ applicableLaws ApplicableLaw[]
+ tasks ComplianceTask[]
+ alerts RiskAlert[]
+ notifications Notification[]
+ licenses License[]
+ registrations Registration[]
+ actionPlans ActionPlan[]
+ updatedAt DateTime @updatedAt
+}
+model ComplianceRule {
+ id String @id @default(cuid())
+ code String @unique
+ label String
+ field String
+ operator String
+ value Float
+ reason String
+ enabled Boolean @default(true)
+ version Int @default(1)
+ updatedAt DateTime @updatedAt
+}
+model ApplicableLaw {
+ id String @id @default(cuid())
+ profileId String
+ profile SMEProfile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+ code String
+ name String
+ reason String
+ reviewRequired Boolean @default(true)
+ @@unique([profileId,code])
+}
+model ComplianceTask {
+ id String @id @default(cuid())
+ profileId String
+ profile SMEProfile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+ title String
+ law String
+ due DateTime
+ priority String
+ status String @default("Pending")
+ description String
+ documents String[]
+ penalty String
+ duration String
+ @@index([profileId,due])
+}
+model RiskAlert {
+ id String @id @default(cuid())
+ profileId String
+ profile SMEProfile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+ title String
+ severity String
+ reason String
+ resolved Boolean @default(false)
+ createdAt DateTime @default(now())
+}
+model Notification {
+ id String @id @default(cuid())
+ profileId String
+ profile SMEProfile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+ message String
+ read Boolean @default(false)
+ createdAt DateTime @default(now())
+}
+model License {
+ id String @id @default(cuid())
+ profileId String
+ profile SMEProfile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+ name String
+ number String?
+ expiresAt DateTime
+ status String
+}
+model Registration {
+ id String @id @default(cuid())
+ profileId String
+ profile SMEProfile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+ name String
+ number String?
+ status String
+ @@unique([profileId,name])
+}
+model ActionPlan {
+ id String @id @default(cuid())
+ profileId String
+ profile SMEProfile @relation(fields:[profileId],references:[id],onDelete:Cascade)
+ title String
+ steps Json
+ priority String
+ estimatedTime String
+ createdAt DateTime @default(now())
+}
+
+// V2 workspace aggregates are canonical. Legacy V1 tables remain unchanged.
+model AppAccount {
+ id String @id
+ email String @unique
+ name String
+ passwordHash String?
+ authVersion Int @default(0)
+ memberships BusinessMember[]
+ resets PasswordReset[]
+ createdAt DateTime @default(now())
+}
+model BusinessWorkspace {
+ id String @id
+ ownerId String @unique
+ revision Int @default(0)
+ payload Json
+ members BusinessMember[]
+ updatedAt DateTime @updatedAt
+}
+model BusinessMember {
+ businessId String
+ userId String
+ role String
+ business BusinessWorkspace @relation(fields:[businessId],references:[id],onDelete:Cascade)
+ user AppAccount @relation(fields:[userId],references:[id],onDelete:Cascade)
+ @@id([businessId,userId])
+}
+model PasswordReset {
+ hash String @id
+ userId String
+ expiresAt DateTime
+ user AppAccount @relation(fields:[userId],references:[id],onDelete:Cascade)
+}
+model AuditEntry {
+ id String @id
+ businessId String
+ actor String
+ action String
+ at DateTime @default(now())
+ @@index([businessId,at])
+}
+model RateBucket {
+ key String @id
+ count Int
+ expiresAt DateTime
+}
