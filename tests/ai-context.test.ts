@@ -40,7 +40,7 @@ test('model input contains the current saved profile and omits private payroll n
 test('whitespace configuration is not reported as a configured live provider',()=>{
  const oldKey=process.env.GEMINI_API_KEY,oldModel=process.env.GEMINI_MODEL;
  try{process.env.GEMINI_API_KEY='  ';process.env.GEMINI_MODEL='  ';
-  const c=geminiConfiguration();assert.equal(c.liveConfigured,false);assert.equal(c.apiKey,undefined);assert.equal(c.model,'gemini-3.1-flash-lite');
+  const c=geminiConfiguration();assert.equal(c.liveConfigured,false);assert.equal(c.apiKey,undefined);assert.equal(c.model,'gemini-3.5-flash-lite');
  }finally{if(oldKey===undefined)delete process.env.GEMINI_API_KEY;else process.env.GEMINI_API_KEY=oldKey;if(oldModel===undefined)delete process.env.GEMINI_MODEL;else process.env.GEMINI_MODEL=oldModel;}
 });
 

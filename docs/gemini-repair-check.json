@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-25T16:47:49.582Z",
+  "status": "LIVE AI WORKING",
+  "fixture": "Isolated authenticated saved Phoenix Tech Solutions business, eight employees. Existing owner records preserved.",
+  "provider": {
+    "httpStatus": 200,
+    "provider": "Google Gemini",
+    "fallbackUsed": false,
+    "liveSucceeded": true,
+    "model": "gemini-3.5-flash-lite",
+    "responseId": "jjHeauWTCOSm694PrIbXOQ"
+  },
+  "results": [
+    {
+      "question": "What is my company name?",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "Phoenix Tech Solutions"
+    },
+    {
+      "question": "i hae a companey.........i am planning to hire 75 employees......and give thrm work.....tell me what and all i need to deal with",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "Hiring 75 employees (bringing your total to 83) triggers several compliance requirements in Karnataka:\n\n1. **EPF & ESI:** The 20-employee threshold for Employee Provident Fund (EPF) and the 10-employee threshold for Employee State Insurance (ESI) are met; confirm establishment coverage and employee wage eligibility.\n2. **POSH Compliance:** Workplaces with 10 or more workers require an Internal Committee under the POSH Act.\n3. **State Registrations:** Review Karnataka Shops and Commercial Establishments registration and Professional Tax employer enrolment.\n\nWould you like help estimating the gross monthly payroll cost for your new hires?"
+    },
+    {
+      "question": "Explain that in simple language.",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "When your team grows to 83 people, Karnataka labour laws require you to handle a few key responsibilities:\n\n1. **Provident Fund & Insurance (EPF & ESI):** You must register for government worker savings (EPF) and medical insurance (ESI) schemes for eligible staff.\n2. **Safe Workplace Committee (POSH):** Since you have over 10 workers, you must set up an Internal Committee to prevent workplace harassment.\n3. **Local Registrations:** You need local commercial establishment registration and Professional Tax enrollment in Karnataka. \n\nWould you like to estimate the additional wage costs for these 75 new employees?"
+    },
+    {
+      "question": "What is POSH?",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "POSH stands for the Prevention of Sexual Harassment at Work. Under the POSH Act 2013, businesses with 10 or more workers must set up an Internal Committee to prevent harassment and handle complaints at each workplace. \n\nSource: [IndiaCode POSH Act 2013](https://www.indiacode.nic.in/handle/123456789/17057?sam_handle=123456789%2F2490) (Reviewed: 2026-10-24).\n\nWould you like to know more about who needs to be on this committee?"
+    },
+    {
+      "question": "What is EPF?",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "EPF (Employees' Provident Fund) is a mandatory retirement savings scheme governed by the Code on Social Security 2020. Employers and eligible employees contribute a percentage of wages monthly toward the employee's retirement fund. \n\nSource: [Code on Social Security 2020 Chapter III](https://www.labour.gov.in/static/uploads/2026/02/83978455025732b99b0165def80ab171.pdf) (Reviewed: 2026-10-24).\n\nWould you like to calculate estimated EPF contributions for your employees?"
+    },
+    {
+      "question": "Why does EPF apply to my business?",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "Your business currently has 8; adding 75 employees brings your total headcount to 83. This exceeds the Code on Social Security's 20-employee establishment threshold, making EPF applicable to your business.\n\nSource: [Code on Social Security 2020 Chapter III](https://www.labour.gov.in/static/uploads/2026/02/83978455025732b99b0165def80ab171.pdf) (Reviewed: 2026-10-24).\n\nWould you like to calculate estimated EPF contributions for your employees?"
+    },
+    {
+      "question": "Does hiring more employees increase my GST?",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "No, hiring employees does not increase GST payable. GST is an indirect tax on the supply of goods and services, determined by your aggregate turnover, supplies, and tax treatment, not your headcount. \n\nSource: [Central Goods and Services Tax Act 2017](https://gstcouncil.gov.in/node/4096) (Reviewed: 2026-10-24).\n\nWould you like to simulate how a change in your turnover or supplies would affect your GST requirements?"
+    },
+    {
+      "question": "Write a recipe for chocolate cake.",
+      "httpStatus": 200,
+      "liveSucceeded": true,
+      "fallbackUsed": false,
+      "mode": "live",
+      "model": "gemini-3.5-flash-lite",
+      "message": "I’m designed to help with SME compliance and related business questions. Please ask me about your business obligations, deadlines, registrations or employee changes."
+    }
+  ],
+  "savedProfileUnchanged": true
+}

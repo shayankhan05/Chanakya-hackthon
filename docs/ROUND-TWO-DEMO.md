@@ -1,0 +1,16 @@
+# Round-two judge demonstration
+
+1. Open http://127.0.0.1:3001/demo#simulator. This is the isolated Phoenix Tech Solutions sample, 8 employees. If an old local demo was modified, choose the hackathon sample and Reset this demo. This does not reset a real account.
+2. Expand **Round-two judge walkthrough · run without Gemini**. Press **Run the complete offline demonstration**. It makes no provider request.
+3. Show 8→24: 16 additional people at the fictional ₹25,000 gross wage produce ₹4,00,000 extra gross payroll per month. Show 8→50: 42 additional people produce ₹10,50,000 per month. These are gross wages, not statutory wage bases or full employer costs.
+4. Open **Financial impact** for editable wages, hiring month, horizon and expansion budget. Calculate, then enable the staged comparison. A later hiring phase lowers payroll months, not legal obligations. Missing/unsupported EPF/ESI inputs are shown explicitly.
+5. Inspect **Before and after: what actually changed**: outcome, reasons, missing data, jurisdiction, version, effective date, source and new preparation proposals. Saved headcount is still 8.
+6. Go to **Tasks & deadlines → Smart compliance planning → Judge example**. The fictional input has three mandatory tasks, their dependencies and two optional tasks. It uses a 5-day horizon, 20 available hours and ₹12,000 preparation budget.
+7. Press **Find a feasible plan**. Mandatory work needs ₹6,000 and 10 hours. The selected schedule includes optional work for a total of ₹9,500 and 17 hours; all fictional finish windows and dependencies fit. Explain that optional points are user preferences, not risk scores or an LLM ranking.
+8. Change preparation budget to ₹2,000 and available hours to 6, then solve again. The solver proves a ₹4,000 mandatory-budget shortfall and at least 4 missing mandatory hours. It does not solve this by skipping required work. Open **Risks & alerts** to see the planning shortfall, clearly labeled fictional.
+9. Restore resources and solve. Choose **Save analysis for Copilot**, then **Explain chosen plan**. In Ask Copilot, enable **Offline judge mode** to show a labeled local algorithm explanation without Gemini. With that checkbox off (the default), the sample chat uses the configured live Gemini model. In a real authenticated test workspace the live AI can explain the saved, authorized solver result through its read-only tool; the schedule is still produced by the solver.
+10. Open http://127.0.0.1:3001/round-two-benchmark.html. Explain the 25 fictional input cases, deadline-order baseline, independent exhaustive oracle, actual measured timings, and explicit small-instance/search limits. JSON is downloadable. Do not describe example costs as government fees or example finish windows as legal deadlines.
+
+For actual company tasks: use **Load my tasks**, enter reviewed preparation estimates and staff availability. Confirmed screening tasks and trusted verified dates are enforced from the owned workspace. Unknown dates remain unknown. More than 12 tasks require a different planning scope/solver; mandatory work is never silently dropped to fit the implementation limit.
+
+The app has no promise of continuous government/HR data ingestion, email/WhatsApp delivery or guaranteed avoidance of notices. Those are separate integrations. The mathematical demonstration does not require them.

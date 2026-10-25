@@ -13,7 +13,8 @@
     "lint": "eslint app components lib scripts tests prisma --no-warn-ignored",
     "evaluate:advisor": "tsx scripts/evaluate-advisor.mts",
     "verify:ai": "tsx scripts/verify-ai.mts",
-    "test:ai": "tsx scripts/test-live-only.mts"
+    "test:ai": "tsx scripts/test-live-only.mts",
+    "benchmark:round-two": "tsx scripts/benchmark-round-two.mts"
   },
   "dependencies": {
     "@google/genai": "^2.31.0",

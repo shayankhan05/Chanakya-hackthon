@@ -1,6 +1,6 @@
 # Gemini setup and migration
 
-ComplianceCopilot now uses Google Gemini exclusively through the server-side `@google/genai` SDK. The OpenAI adapter, SDK dependency and environment settings have been removed. Business storage and existing accounts are preserved.
+ComplianceCopilot now uses Google Gemini as the active provider through the server-side `@google/genai` SDK. The OpenAI adapter, SDK dependency and environment settings have been removed. Business storage and existing accounts are preserved.
 
 ## Required setup
 
@@ -14,7 +14,7 @@ The prepared configuration is:
 ```dotenv
 AI_PROVIDER="gemini"
 GEMINI_API_KEY=""
-GEMINI_MODEL="gemini-3.1-flash-lite"
+GEMINI_MODEL="gemini-3.5-flash-lite"
 NEXTAUTH_URL="http://127.0.0.1:3001"
 ```
 
@@ -24,7 +24,7 @@ The empty key is intentional: the exposed credential was removed. Model access a
 
 The existing SQLite paths and authentication configuration remain in place. The scheduler secret has been independently regenerated; it is never an AI credential. Any external scheduler must use this replacement secret. No scheduler is enabled automatically. The existing secure authentication secret was preserved. No database reset or seed was run.
 
-The Google key is read only on the server. Authentication, permission, quota, model-access and transport errors are sanitized. Authenticated chat requires live generation and returns an explicit error if Gemini fails; it does not silently substitute local explanations. Anonymous demo guidance remains labeled as local.
+The Google key is read only on the server. Authentication, permission, quota, model-access and transport errors are sanitized. Authenticated chat requires live generation and returns an explicit error if Gemini fails; it does not silently substitute local explanations. Demo chat also requests live generation by default. Only the explicitly selected Offline judge mode produces labeled local guidance. Historical local messages keep their provenance label.
 
 ## Verification
 
@@ -32,7 +32,9 @@ The Google key is read only on the server. Authentication, permission, quota, mo
 
 Unit tests use injected Gemini responses to verify profile context, privacy, conversation history, tool calls and read-only employee-growth simulation. These tests do not prove real model connectivity. Only a successful provider request and authenticated chat responses establish that live AI works.
 
-Current migration status: a fresh private Gemini key is required. Authentication, billing, quota and real model generation cannot be confirmed until that replacement is configured.
+Repair findings (2026-10-25): the privately configured key generated real responses. The previously selected `gemini-3.1-flash-lite` returned HTTP 503 UNAVAILABLE with an overload indication even for a minimal native API request. The intermediate `gemini-3.5-flash` model generated company-profile and employee-growth answers, but its project/model daily free-tier allowance was exhausted. Sanitized Google quota metadata identified `GenerateRequestsPerDayPerProjectPerModel-FreeTier`, value 20 (not a temporary per-minute limit). The active configuration now selects `gemini-3.5-flash-lite`, which generated a real response with the same private key. A successful probe does not establish unlimited quota. Full application verification is recorded separately in `docs/gemini-repair-check.json`. No automatic model switch or local fallback is used.
 
 ## Timeout handling
-The generation adapter retries a transient network/timeout or HTTP 500/502/503/504 failure up to twice, with at most 15 seconds per attempt, within a 50-second total conversation budget. Authentication and quota errors are not retried. The browser allows 65 seconds for authorization, generation and saving history. No local answer is substituted. Broad prompts such as "Growth of the company." ask the live model for clarification without enabling speculative tool calls. A provider outage may still return an explicit error after the retry budget is exhausted.
+The generation adapter retries a transient network/timeout or HTTP 500/502/503/504 failure up to twice, waiting 500 ms and 1,000 ms between attempts, with at most 15 seconds per attempt, within a 50-second total conversation budget. Authentication and quota errors are not retried. The browser allows 65 seconds for authorization, generation and saving history. No local answer is substituted. Broad prompts such as "Growth of the company." ask the live model for clarification without enabling speculative tool calls. A provider outage may still return an explicit error after the retry budget is exhausted.
+
+The tested Gemini 3.5 Flash and Flash-Lite models use minimal thinking for interactive latency, supported by [Google’s thinking configuration documentation](https://ai.google.dev/gemini-api/docs/thinking/). Other configured model families retain their own defaults. Run `npx tsx scripts/check-gemini-repair.mts` for paced authenticated generation tests, including the user’s 75-additional-employees question, follow-up, business facts, legal topics and an unrelated request. The script creates an isolated test business and does not alter existing owners’ business profiles.

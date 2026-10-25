@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-25T16:22:01.933Z",
+  "provider": "Configured server provider; key never read by this script",
+  "results": [
+    {
+      "question": "What is my company name?",
+      "status": 200,
+      "mode": "live",
+      "liveSucceeded": true,
+      "message": "Your company name is Phoenix Tech Solutions.",
+      "durationMs": 10153
+    },
+    {
+      "question": "What is POSH?",
+      "status": 503,
+      "error": "The Gemini service is temporarily unavailable. Please retry shortly; no local answer was substituted.",
+      "providerStatus": 503,
+      "liveSucceeded": false,
+      "durationMs": 18423
+    },
+    {
+      "question": "Explain that in simple language.",
+      "status": 503,
+      "error": "The Gemini service is temporarily unavailable. Please retry shortly; no local answer was substituted.",
+      "providerStatus": 503,
+      "liveSucceeded": false,
+      "durationMs": 33348
+    },
+    {
+      "question": "Write a recipe for chocolate cake.",
+      "status": 503,
+      "error": "The Gemini service is temporarily unavailable. Please retry shortly; no local answer was substituted.",
+      "providerStatus": 503,
+      "liveSucceeded": false,
+      "durationMs": 19670
+    },
+    {
+      "question": "Explain my saved constraint-aware compliance plan.",
+      "status": 200,
+      "mode": "live",
+      "liveSucceeded": true,
+      "message": "Fictional planning example: preparation costs and finish dates are demonstration inputs, not statutory facts.\n\nYour saved compliance plan is a **fictional demonstration** designed to help organize tasks. It is not based on statutory deadlines or legal requirements.\n\nKey points of this plan:\n* **Status:** The schedule is feasible, using 17 of your 20 available hours.\n* **Tasks:** It prioritizes three mandatory preparation tasks (documents, committee review, and coverage) followed by two optional tasks (records and training).\n* **Objective:** It maximizes advisory importance (14 points) within the defined constraints.\n\nWould you like to discuss real-world compliance obligations for Phoenix Tech Solutions?",
+      "durationMs": 19684
+    }
+  ],
+  "offlineModeVerified": true,
+  "allLivePassed": false
+}

@@ -1,0 +1,955 @@
+{
+  "generatedAt": "2026-10-25T15:46:40.376Z",
+  "fixture": "25 fictional constraint problems, not measured SME outcomes. Costs and deadlines are examples.",
+  "summary": {
+    "scenarios": 25,
+    "knownFeasible": 13,
+    "knownInfeasible": 12,
+    "baselineValidSchedules": 8,
+    "optimizerValidSchedules": 13,
+    "feasibleMandatoryInstances": 26,
+    "baselineMandatorySatisfiedFeasible": 19,
+    "optimizerMandatorySatisfiedFeasible": 26,
+    "baselineMandatorySatisfied": 28,
+    "optimizerMandatorySatisfied": 26,
+    "mandatoryTaskInstances": 50,
+    "baselineInfeasibleInputsFlagged": 12,
+    "optimizerProvenInfeasible": 12,
+    "baselineFeasibleInputsRejected": 5,
+    "optimizerFeasibleInputsRejected": 0,
+    "comparableCompleteInputs": 8,
+    "baselineComparableAdvisoryValue": 25,
+    "optimizerComparableAdvisoryValue": 37,
+    "baselineDependencyViolations": 0,
+    "optimizerDependencyViolations": 0,
+    "baselineBudgetUsed": 730,
+    "optimizerBudgetUsed": 610,
+    "baselineHoursUsed": 71,
+    "optimizerHoursUsed": 62,
+    "baselineTotalMs": 1.3065999999999462,
+    "optimizerTotalMs": 1.9797000000000367,
+    "oracleMatches": 25,
+    "growthChecksPassed": 11,
+    "growthChecks": 11
+  },
+  "rows": [
+    {
+      "id": "mandatory-budget-priority-0",
+      "expectedFeasible": true,
+      "reason": "Mandatory costs total 80; the early optional task would consume the budget needed by a required task.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "50.00",
+        "hoursUsed": 1,
+        "advisoryValue": 10,
+        "elapsedMs": 0.061599999999998545
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "80.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.08699999999998909,
+        "nodes": 18
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    },
+    {
+      "id": "mandatory-budget-priority-1",
+      "expectedFeasible": true,
+      "reason": "Mandatory costs total 80; the early optional task would consume the budget needed by a required task.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "50.00",
+        "hoursUsed": 1,
+        "advisoryValue": 10,
+        "elapsedMs": 0.05649999999997135
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "80.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.08630000000005111,
+        "nodes": 18
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    },
+    {
+      "id": "mandatory-budget-priority-2",
+      "expectedFeasible": true,
+      "reason": "Mandatory costs total 80; the early optional task would consume the budget needed by a required task.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "90.00",
+        "hoursUsed": 3,
+        "advisoryValue": 10,
+        "elapsedMs": 0.05360000000001719
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "80.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.08409999999997808,
+        "nodes": 18
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    },
+    {
+      "id": "mandatory-budget-priority-3",
+      "expectedFeasible": true,
+      "reason": "Mandatory costs total 80; the early optional task would consume the budget needed by a required task.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "90.00",
+        "hoursUsed": 3,
+        "advisoryValue": 10,
+        "elapsedMs": 0.07939999999996417
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "80.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.13779999999997017,
+        "nodes": 18
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    },
+    {
+      "id": "mandatory-budget-priority-4",
+      "expectedFeasible": true,
+      "reason": "Mandatory costs total 80; the early optional task would consume the budget needed by a required task.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "90.00",
+        "hoursUsed": 3,
+        "advisoryValue": 10,
+        "elapsedMs": 0.04599999999999227
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "80.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.07619999999997162,
+        "nodes": 18
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    },
+    {
+      "id": "budget-shortfall-0",
+      "expectedFeasible": false,
+      "reason": "Mandatory costs of 80 exceed the supplied budget.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "advisoryValue": 0,
+        "elapsedMs": 0.039199999999993906
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.06409999999999627,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "budget-shortfall-1",
+      "expectedFeasible": false,
+      "reason": "Mandatory costs of 80 exceed the supplied budget.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "advisoryValue": 0,
+        "elapsedMs": 0.037800000000004275
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.043200000000013006,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "budget-shortfall-2",
+      "expectedFeasible": false,
+      "reason": "Mandatory costs of 80 exceed the supplied budget.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "advisoryValue": 0,
+        "elapsedMs": 0.05160000000000764
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.052600000000040836,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "budget-shortfall-3",
+      "expectedFeasible": false,
+      "reason": "Mandatory costs of 80 exceed the supplied budget.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "40.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.041800000000023374
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.03789999999997917,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "budget-shortfall-4",
+      "expectedFeasible": false,
+      "reason": "Mandatory costs of 80 exceed the supplied budget.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "40.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.0514999999999759
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.065400000000011,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "deadline-overload-0",
+      "expectedFeasible": false,
+      "reason": "Three mandatory hours must finish in the two-hour first day.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "10.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.03710000000000946
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.08910000000003038,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "deadline-overload-1",
+      "expectedFeasible": false,
+      "reason": "Three mandatory hours must finish in the two-hour first day.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "10.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.044699999999977535
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.043800000000032924,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "deadline-overload-2",
+      "expectedFeasible": false,
+      "reason": "Three mandatory hours must finish in the two-hour first day.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "10.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.038699999999948886
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.03609999999997626,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "deadline-overload-3",
+      "expectedFeasible": false,
+      "reason": "Three mandatory hours must finish in the two-hour first day.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "10.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.04259999999999309
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.036200000000008004,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "deadline-overload-4",
+      "expectedFeasible": false,
+      "reason": "Three mandatory hours must finish in the two-hour first day.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "10.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.03859999999997399
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.04219999999997981,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "dependency-choice-0",
+      "expectedFeasible": true,
+      "reason": "Documents are a hard prerequisite; exactly one optional two-hour task can follow the four required hours.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "advisoryValue": 3,
+        "elapsedMs": 0.0644999999999527
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 9,
+        "elapsedMs": 0.13309999999995625,
+        "nodes": 24
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 9
+      }
+    },
+    {
+      "id": "dependency-choice-1",
+      "expectedFeasible": true,
+      "reason": "Documents are a hard prerequisite; exactly one optional two-hour task can follow the four required hours.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "advisoryValue": 4,
+        "elapsedMs": 0.06110000000001037
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 8,
+        "elapsedMs": 0.12870000000003756,
+        "nodes": 24
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 8
+      }
+    },
+    {
+      "id": "dependency-choice-2",
+      "expectedFeasible": true,
+      "reason": "Documents are a hard prerequisite; exactly one optional two-hour task can follow the four required hours.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "advisoryValue": 5,
+        "elapsedMs": 0.07820000000003802
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 7,
+        "elapsedMs": 0.12079999999997426,
+        "nodes": 24
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 7
+      }
+    },
+    {
+      "id": "dependency-choice-3",
+      "expectedFeasible": true,
+      "reason": "Documents are a hard prerequisite; exactly one optional two-hour task can follow the four required hours.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "advisoryValue": 6,
+        "elapsedMs": 0.07080000000001974
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 6,
+        "elapsedMs": 0.15769999999997708,
+        "nodes": 22
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 6
+      }
+    },
+    {
+      "id": "dependency-choice-4",
+      "expectedFeasible": true,
+      "reason": "Documents are a hard prerequisite; exactly one optional two-hour task can follow the four required hours.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "advisoryValue": 7,
+        "elapsedMs": 0.061299999999960164
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "30.00",
+        "hoursUsed": 6,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 7,
+        "elapsedMs": 0.11970000000002301,
+        "nodes": 22
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 7
+      }
+    },
+    {
+      "id": "staff-window-0",
+      "expectedFeasible": false,
+      "reason": "The owner has no working hours on day one; a required first-day task cannot finish.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "10.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.05200000000002092
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.05389999999999873,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "staff-window-1",
+      "expectedFeasible": false,
+      "reason": "The owner has no working hours on day one; a required first-day task cannot finish.",
+      "baseline": {
+        "valid": false,
+        "mandatorySatisfied": 1,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "10.00",
+        "hoursUsed": 2,
+        "advisoryValue": 0,
+        "elapsedMs": 0.039900000000045566
+      },
+      "optimizer": {
+        "valid": false,
+        "mandatorySatisfied": 0,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "0.00",
+        "hoursUsed": 0,
+        "status": "infeasible",
+        "optimal": false,
+        "advisoryValue": 0,
+        "elapsedMs": 0.03950000000003229,
+        "nodes": 0
+      },
+      "oracle": {
+        "feasible": false,
+        "advisoryValue": -1
+      }
+    },
+    {
+      "id": "staff-window-2",
+      "expectedFeasible": true,
+      "reason": "The responsible owner has four hours by day three.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "20.00",
+        "hoursUsed": 4,
+        "advisoryValue": 0,
+        "elapsedMs": 0.039600000000007185
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "20.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.09710000000001173,
+        "nodes": 3
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    },
+    {
+      "id": "staff-window-3",
+      "expectedFeasible": true,
+      "reason": "The responsible owner has four hours by day three.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "20.00",
+        "hoursUsed": 4,
+        "advisoryValue": 0,
+        "elapsedMs": 0.05310000000002901
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "20.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.05880000000001928,
+        "nodes": 3
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    },
+    {
+      "id": "staff-window-4",
+      "expectedFeasible": true,
+      "reason": "The responsible owner has four hours by day three.",
+      "baseline": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "20.00",
+        "hoursUsed": 4,
+        "advisoryValue": 0,
+        "elapsedMs": 0.065400000000011
+      },
+      "optimizer": {
+        "valid": true,
+        "mandatorySatisfied": 2,
+        "mandatoryTotal": 2,
+        "dependencyViolations": 0,
+        "violations": [],
+        "budgetUsed": "20.00",
+        "hoursUsed": 4,
+        "status": "feasible",
+        "optimal": true,
+        "advisoryValue": 0,
+        "elapsedMs": 0.08839999999997872,
+        "nodes": 3
+      },
+      "oracle": {
+        "feasible": true,
+        "advisoryValue": 0
+      }
+    }
+  ],
+  "growth": [
+    {
+      "name": "EPF below general threshold with no prior coverage",
+      "actual": "Not applicable",
+      "expected": "Not applicable",
+      "passed": true
+    },
+    {
+      "name": "EPF at threshold with no declared exemption",
+      "actual": "Applicable",
+      "expected": "Applicable",
+      "passed": true
+    },
+    {
+      "name": "EPF exemption unknown requires conditional screening",
+      "actual": "Potentially applicable",
+      "expected": "Potentially applicable",
+      "passed": true
+    },
+    {
+      "name": "EPF prior coverage continues after headcount falls",
+      "actual": "Applicable",
+      "expected": "Applicable",
+      "passed": true
+    },
+    {
+      "name": "POSH at one-workplace boundary",
+      "actual": "Applicable",
+      "expected": "Applicable",
+      "passed": true
+    },
+    {
+      "name": "POSH below one-workplace boundary",
+      "actual": "Not applicable",
+      "expected": "Not applicable",
+      "passed": true
+    },
+    {
+      "name": "ESI threshold still requires notifications and eligibility",
+      "actual": "Potentially applicable",
+      "expected": "Potentially applicable",
+      "passed": true
+    },
+    {
+      "name": "ESI unknown hazardous facts remain missing",
+      "actual": "Needs additional information",
+      "expected": "Needs additional information",
+      "passed": true
+    },
+    {
+      "name": "Employee-only growth does not change GST screening",
+      "actual": "Not applicable",
+      "expected": "Not applicable",
+      "passed": true
+    },
+    {
+      "name": "First export needs a conditional IEC review",
+      "actual": "Potentially applicable",
+      "expected": "Potentially applicable",
+      "passed": true
+    },
+    {
+      "name": "Rule effective date before Social Security Code version is not extrapolated",
+      "actual": "Needs additional information",
+      "expected": "Needs additional information",
+      "passed": true
+    }
+  ]
+}

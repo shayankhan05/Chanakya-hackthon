@@ -1,0 +1,29 @@
+import assert from 'node:assert/strict';
+import {randomUUID} from 'node:crypto';
+import {judgePlan} from '../lib/planning/demo';
+import {blankProfile} from '../lib/domain.ts';
+const base=process.env.TEST_BASE_URL||'http://127.0.0.1:3001';
+class Client{
+ cookies=new Map<string,string>();
+ async request(path:string,options:RequestInit={}){const headers=new Headers(options.headers);headers.set('origin',base);headers.set('cookie',[...this.cookies].map(([k,v])=>k+'='+v).join('; '));const r=await fetch(base+path,{...options,headers,redirect:'manual'});for(const c of r.headers.getSetCookie()){const part=c.split(';')[0],i=part.indexOf('=');this.cookies.set(part.slice(0,i),part.slice(i+1));}return r;}
+ async json(path:string,method='GET',body?:unknown){const r=await this.request(path,{method,headers:{'Content-Type':'application/json'},body:body===undefined?undefined:JSON.stringify(body)});return {status:r.status,data:await r.json()};}
+ async login(email:string,password:string){const csrf=(await this.json('/api/auth/csrf')).data.csrfToken;await this.request('/api/auth/callback/credentials',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({email,password,csrfToken:csrf,json:'true',callbackUrl:base+'/dashboard'})});assert.ok((await this.json('/api/auth/session')).data.user);}
+}
+
+
+
+const a=new Client(),b=new Client(),password='Synthetic-round-two-12345';
+for(const [index,client] of [a,b].entries()){const email='round-two-'+randomUUID()+'@example.test';assert.equal((await client.json('/api/account/signup','POST',{name:'Round two test '+index,email,password,confirmPassword:password})).status,201);await client.login(email,password);}
+const profile={...structuredClone(blankProfile),name:'Phoenix Tech Solutions',state:'Karnataka',city:'Bengaluru',employees:8,branchLocations:[{state:'Karnataka',city:'Bengaluru',employees:8}],turnover:1800000,startDate:'2024-04-01',priorEpf:'No',priorEsi:'No',hazardous:'No',seasonalFactory:'No',taxableSupplies:'Yes',gstExceptions:'No',interstate:'No'};
+const create=await a.json('/api/workspaces','POST',profile);assert.equal(create.status,201);const w=create.data.workspace;
+const status=await a.json('/api/chat');if(process.env.EXPECT_OFFLINE==='true')assert.equal(status.data.liveConfigured,false);console.log('Server liveConfigured: '+status.data.liveConfigured);
+const input=judgePlan();const plan=await a.json('/api/planning','POST',{businessId:w.id,input});assert.equal(plan.status,200);assert.equal(plan.data.result.status,'feasible');assert.equal(plan.data.result.budgetUsed,'9500.00');console.log('PASS: authenticated optimizer returns all mandatory tasks and selected cost.');
+const shortage=await a.json('/api/planning','POST',{businessId:w.id,input:{...input,budget:'2000',availableHours:6}});assert.equal(shortage.status,200);assert.equal(shortage.data.result.status,'infeasible');assert.equal(shortage.data.result.schedule.length,0);assert.ok(shortage.data.result.shortfalls.some((s:{kind:string;amount:string})=>s.kind==='budget'&&s.amount==='4000.00'));console.log('PASS: hard resource shortfalls detected without skipping mandatory work.');
+const financial=await a.json('/api/growth-finance','POST',{businessId:w.id,input:{plannedEmployees:24,grossPerNewEmployee:'25000',months:6,startDate:'2026-10-25',budget:'1000000',phases:[{month:1,hires:16}],contributions:[]}});assert.equal(financial.status,200);assert.equal(financial.data.monthlyGrossChange,'400000.00');assert.ok(financial.data.comparison.delta.entries.length);console.log('PASS: payroll arithmetic and versioned rule deltas calculated without AI.');
+const after=(await a.json('/api/workspaces/'+w.id)).data.workspace;assert.deepEqual(after.profile,w.profile);assert.deepEqual(after.tasks,w.tasks);assert.deepEqual(after.events,w.events);assert.equal(after.revision,w.revision);console.log('PASS: all unsaved calculations preserve profile, tasks, events and revision.');
+assert.equal((await b.json('/api/planning','POST',{businessId:w.id,input})).status,404);assert.equal((await b.json('/api/growth-finance','POST',{businessId:w.id,input:financial.data.input})).status,404);console.log('PASS: both APIs reject another authenticated account.');
+const save=await a.json('/api/planning','POST',{businessId:w.id,input,save:true,result:{status:'fake'}});assert.equal(save.status,200);assert.equal(save.data.workspace.planningAnalysis.result.status,'feasible');assert.deepEqual(save.data.workspace.profile,w.profile);console.log('PASS: saving recomputes trusted results and changes analysis metadata only.');
+const local=new Client();const explanation=await local.json('/api/chat','POST',{businessId:'demo-round-two',question:'Explain my saved constraint-aware compliance plan.',messageId:randomUUID(),demoProfile:profile,demoPlanInput:input});assert.equal(explanation.status,200);assert.equal(explanation.data.mode,'knowledge-base');assert.match(explanation.data.message+(explanation.data.details||''),/9500.00/);console.log('PASS: labeled deterministic explanation works without a provider.');
+const report=await a.request('/api/workspaces/'+w.id+'/report?format=json');assert.equal(report.status,200);assert.ok((await report.json()).planningAnalysis);console.log('PASS: owned report includes the planning snapshot.');
+if(process.env.RUN_LIVE_EXPLANATION==='true'){const live=await a.json('/api/chat','POST',{businessId:w.id,question:'Explain my saved constraint-aware compliance plan briefly. Why were the tasks chosen?',messageId:randomUUID(),requireLive:true});console.log('LIVE EXPLANATION '+JSON.stringify({status:live.status,mode:live.data.mode,errorCategory:live.data.errorCategory,message:live.data.message}));assert.equal(live.status,200);assert.equal(live.data.mode,'live');assert.match(live.data.message,/Fictional planning example/);}
+console.log('ROUND-TWO APPLICATION CHECKS PASSED');

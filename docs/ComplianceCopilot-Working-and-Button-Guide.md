@@ -1,0 +1,666 @@
+# ComplianceCopilot user guide
+
+Detailed workflow and button reference
+
+Prepared for SME owners and product demonstrations on 25 October 2026
+
+This guide explains how the current ComplianceCopilot app works, what its visible controls do, and how to use them in everyday business situations. It describes the implemented application rather than the original feature wish list. Repeated controls are grouped where their behavior is identical. Conditional controls are identified so that you know why a button may be absent.
+
+All company stories, wages, preparation costs and dates in examples are illustrative. Your account uses your own saved business information. The app helps you organize and review obligations; government registration, filing, payment and legal confirmation happen outside this app.
+
+## 1 What the app does
+
+ComplianceCopilot connects your business information with legal screening, actions, dates, records and growth planning. Instead of searching through separate spreadsheets, you can see why an issue matters, what information is missing and what to do next.
+
+The main user is an SME owner or person coordinating compliance work. An accountant, adviser or HR colleague can use an exported report to discuss the business's situation with the owner. The current interface does not include an invitation or team permission management screen; entering a responsible person's name assigns a task label, not an account or access permission.
+
+The app uses three kinds of processing:
+
+| Part | What it actually does | Useful example |
+| --- | --- | --- |
+| Business and rule engine | Evaluates entered facts against versioned screening rules and records explanations and missing facts. | A planned increase in employees prompts EPF, ESI and POSH reviews where relevant. |
+| Calculators and planning solver | Performs validated arithmetic and searches for schedules within entered constraints. These tools do not require an AI key. | Compare the gross wage cost of hiring now versus staging recruitment. |
+| Live AI assistant | Uses the configured Gemini model, authorized business context and read-only tools to explain a question conversationally. | Ask what changes if you hire 75 additional employees, then ask for a simpler explanation. |
+
+The current configured model after the latest repair is Gemini 3.5 Flash Lite, identified in configuration as `gemini-3.5-flash-lite`. Real authenticated requests were verified in the repair record. Availability, billing and quota still depend on Google when you use the app.
+
+## 2 The workflow in simple words
+
+The everyday flow is: create an account, describe your business, review relevant laws, inspect risks and dates, complete the real-world work, record progress, and keep business information updated.
+
+| Step | What the user does | What the app provides |
+| --- | --- | --- |
+| 1 Create a private workspace | Sign up and complete the business profile. | A saved workspace associated with the signed-in account. |
+| 2 Review the law screening | Open Applicable laws and read the reasons and missing information. | A business-specific screening outcome for each supported domain. |
+| 3 Find the next action | Open Tasks & deadlines or a priority item from the overview. | Actions, suggested documents, progress controls and timing information. |
+| 4 Plan work and resources | Use Smart compliance planning or Growth planner. | A schedule, cost projection or before-and-after comparison. |
+| 5 Do the actual work | Gather documents, consult the relevant professional and act on the appropriate official portal when necessary. | Guidance and record keeping; the app does not perform the external filing. |
+| 6 Record what happened | Save progress or submit an actual completion declaration and evidence. | An action record with dates and history. |
+| 7 Review changes | Save real changes to team size, turnover, workplaces or activity. | Refreshed findings, relevant task changes, alerts and business change history. |
+
+**Example:** Phoenix Tech Solutions has eight employees. The owner first previews a total of 50 employees in Growth planner. The app compares the screening outcomes without changing the saved count. If the business later actually reaches 50, the owner updates Business Profile & Settings and saves. That save records a real business change and reevaluates the workspace.
+
+An actual change and a hypothetical scenario are different. Typing a scenario into chat, calculating wages or saving a planning analysis does not update the real employee count.
+
+## 3 The six main sections
+
+| Sidebar button | What it opens | When to use it |
+| --- | --- | --- |
+| Business overview | The business snapshot, action progress, priority actions, dates, growth milestones and recent signals. | Start here each working day. |
+| Applicable laws | Screening cards with reasons, conditions, missing facts and source references. | Understand why a requirement is being reviewed. |
+| Tasks & deadlines | Action list, calendar, registrations and Smart compliance planning. | Organize and record compliance work. |
+| Risks & alerts | Unfinished issues, priority labels, planning shortfalls and business notices. | Decide what needs attention first. |
+| Growth planner | Workforce and law-change simulation plus financial projections. | Preview hiring, turnover changes, branches and exports. |
+| Ask Copilot | Live chat, conversation history and a tab for tax and contribution tools. | Ask a question about the business or a related requirement. |
+
+The Business records area also contains Calendar, Registrations & licenses and Change history shortcuts. They open the same underlying records used by the main sections. The highlighted sidebar item shows your current section. On mobile, use the menu icon to reveal navigation.
+
+## 4 Home page sign in and account access
+
+### Home page controls
+
+The home page introduces the product. Its illustrated 18-to-24 employee scenario is an example, not a live view of your business. Illustration labels and decorative cards do not submit changes.
+
+| Button or link | What happens | User benefit and example |
+| --- | --- | --- |
+| ComplianceCopilot logo | Opens the home page. | Return to the product introduction. |
+| How it works | Scrolls to the home-page workflow explanation. | Show a new owner the basic process. |
+| Explore the product | Opens the separate demo workspace. | Inspect features before creating an account. |
+| Sign in | Opens the login form. | Access an existing private workspace. |
+| Get started, Map my next move, Create my workspace | Open account signup. | Start saving real business information under your own account. |
+| Try the working demo, Take a look around first | Open the demo. | Try the app with sample information. |
+
+### Login signup and recovery controls
+
+| Button or link | What happens | User benefit and example |
+| --- | --- | --- |
+| Create account | Validates name, email and matching passwords, creates the account, then proceeds to onboarding when sign-in succeeds. | A new owner starts with a blank business profile rather than inheriting demo records. |
+| Sign in | Checks credentials and opens the dashboard. | Return to your existing business. |
+| Forgot password | Opens recovery. | Request a password reset when you cannot sign in. |
+| Request reset link | Requests a single-use, time-limited password recovery link. | Recover access if recovery email is configured. |
+| Development-only reset link | Appears only when explicitly enabled in local development; opens the reset form without sending email. | Test recovery locally. This is not normal production email delivery. |
+| Update password | Redeems a valid reset token and changes the password. Existing sessions are revoked. | Restore access and require a fresh login. |
+| Back to sign in | Returns to login. | Use the new password after a reset. |
+| Back to home | Returns to the landing page. | Leave the authentication flow. |
+| Explore the separate demo workspace | Opens sample data instead of a private account workspace. | Try the product without entering real business details. |
+
+New passwords require at least 12 characters including a letter and a number, subject to the form's validation. A reset link expires after 30 minutes and is single use. If recovery email is not configured and development recovery is disabled, the app reports that limitation; it does not send a message silently.
+
+GitHub credentials and email delivery credentials are not required for normal email-and-password sign-in or Gemini chat. Email configuration is required for the recovery email feature.
+
+## 5 Onboarding and editing business information
+
+The same four-step form is used to create a business, edit saved facts, review a CSV import and enter a detailed hypothetical scenario. The final button tells you which action you are performing.
+
+| Step | Information entered | Why it matters |
+| --- | --- | --- |
+| Business identity | Name, legal business type, industry, workplace type, primary state, city and optional start date. | Identifies the business and helps select relevant conditions and jurisdiction. |
+| Size & locations | Employee count, annual aggregate turnover, equipment investment, financial year, workplace count and staffing by location. | Supports workforce, turnover, classification and workplace screening. |
+| Business activities | Goods/services, taxable supplies, interstate supplies, export plans and optional eligibility answers. | Distinguishes different activity and coverage situations. |
+| Existing compliance | GST registration declaration, other registrations and optional payroll notes. | Separates what the owner declares from what still needs review or supporting records. |
+
+Enter currency amounts in rupees. For example, `1800000` means INR 18 lakh. Include the main workplace in the workplace count. For a single workplace, staffing follows the total employee count; multiple workplaces need a sensible allocation within the overall total.
+
+Use Unknown for eligibility questions you cannot establish. The app can then explain the missing information instead of treating an unsupported Yes or No as fact. A business start date is not an account creation date; leave it unrecorded if you do not know it.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| The four step labels | Switch to a step without submitting the form. | Go directly back to Business identity to correct the name. |
+| Continue | Advances to the next step. | Move from identity to employee and turnover details. |
+| Back | Returns to the previous step. | Recheck the workplace count. |
+| State and city selectors | Choose a supported location; changing the primary state refreshes its city choices. | Select Karnataka and Bengaluru. |
+| Number of workplaces or branches | Changes the number of workplace detail rows. | Enter two and describe each workplace. |
+| More details confirm legal eligibility when known | Expands previous EPF/ESI coverage, exemptions and other screening questions. | Record that coverage existed before a fall in headcount. |
+| We export or plan exports | Records export activity in the current form; reveals the FTP-benefit question. | Review the implications of a first export order. |
+| Currently GST registered and registration checkboxes | Update owner declarations in the draft. | Declare an existing EPF registration, then add certificate details separately. |
+| Create my compliance workspace | Validates the completed onboarding form and creates the saved business workspace. | Finish initial setup. |
+| Save business changes | Saves real business facts, reevaluates rules and records meaningful changes. | Record an actual increase from eight to 24 employees. |
+| Compare detailed plan | Runs the detailed form as a hypothetical comparison. | Preview a new state and activity without changing actual records. |
+| Confirm CSV update | Saves the reviewed imported business profile. | Confirm a corrected employee count from a CSV file. |
+| Cancel | Closes the profile edit without saving its draft. | Abandon an accidental turnover edit. |
+
+The form validates numbers and state/city combinations. A repeated unchanged save does not create a new business-change event. Concurrent stale saves can be rejected so that an older tab does not overwrite newer information.
+
+Payroll notes are optional. Avoid employee identifiers. Free-text payroll notes are excluded from the ordinary AI business-profile context; do not assume that writing a note automatically supplies a validated statutory wage base.
+
+## 6 Shared navigation notifications and account buttons
+
+These controls are available across dashboard sections.
+
+| Control | What it does | User benefit and example |
+| --- | --- | --- |
+| Menu icon or Toggle navigation | Opens or closes navigation on smaller screens. | Reach Growth planner on a phone. |
+| Navigation backdrop | Closes the mobile menu. | Return to the active screen. |
+| Ask Copilot in the page header | Opens the assistant section. | Ask for an explanation from anywhere. |
+| Plan your next move in the sidebar | Opens Growth planner. | Preview an expansion idea. |
+| Bell or Open notifications | Opens or closes recent active notices. Its badge counts unread active notices. | Check new deadline or business-change notices. |
+| A notification row | Marks the notice read, then opens its task or Risks & alerts. | Jump from an EPF review notice to its associated action. |
+| Mark all read | Marks notices read. | Clear unread indicators after reviewing them. It does not complete any task. |
+| Initials or Business profile and account menu | Opens account and business actions. | Reach settings, exports or sign out. |
+| Business Profile & Settings | Opens the business profile editor. | Save an actual turnover or team change. |
+| Business change history | Opens recorded business changes and compliance action history. | See what was updated and when. |
+| Download PDF report | Downloads a report for the saved workspace. | Share the current assessment with an adviser. |
+| Export business data | Downloads the structured JSON report. | Keep a machine-readable copy for analysis. |
+| Account & security | Opens account settings for a signed-in account. | Change the account display name or start password recovery. |
+| Sign out | Ends the current session and returns home. | Leave a shared computer without deleting business data. |
+| Create a real account | Appears in demo mode and opens signup. | Move from trying sample data to creating a private business. |
+| Edit business profile | Opens the profile form from non-overview sections. | Correct a fact while reviewing a finding. |
+| Dismiss error or X in an error banner | Hides that visible error message. | Clear a reviewed message; it does not repair the underlying failed action. |
+| Close dialog or X in a modal | Closes the dialog. Escape and clicking its outside backdrop also close it. | Leave a task or certificate form. Unsaved form edits are not committed. |
+
+Saving inside a dialog and closing it are different. Use its Save, Record or Confirm button before leaving if you want to retain a change.
+
+## 7 Business overview and its buttons
+
+The overview is a starting screen, not a certification page. Its Action progress percentage is the percentage of active tasks recorded Completed. It is not a probability of legal compliance, a government score or an AI confidence score.
+
+The snapshot shows your business name, location, employee count and yearly turnover. Summary cards show task progress, applicable or potentially applicable laws, priority actions and certificates expiring within 30 days based on recorded expiry dates.
+
+| Control | What it opens or changes | Example of usefulness |
+| --- | --- | --- |
+| Update business details | Opens the profile editor. | Record the actual headcount after recruitment. |
+| Action progress card | Opens Tasks & deadlines. | Review which tasks remain before increasing the percentage. |
+| Laws to review card | Opens Applicable laws. | Read the basis for pending legal reviews. |
+| Priority actions card | Opens Risks & alerts. | Focus on high-priority or deadline-risk work first. |
+| Renewals in 30 days card | Opens Registrations & licenses. | Inspect a certificate approaching its entered expiry. |
+| View all under Your next best actions | Opens the complete action list. | See tasks beyond the three-item preview. |
+| A next action row | Opens task details. | Read its required documents and record progress. |
+| Review business details in the empty action state | Opens the profile form. | Check whether a completed list is based on current facts. |
+| Download report | Downloads the workspace PDF. | Prepare a review meeting. |
+| A row under Dates that matter | Opens that dated task. | Inspect the deadline basis and completion record. |
+| Review obligations when no verified dates exist | Opens Tasks & deadlines. | Add or review a sourced obligation. |
+| Recorded certificates expire within 30 days notice | Opens the certificate register. | Find the exact expiry and reminder preference. |
+| Open full calendar | Opens the calendar view. | See preparation targets and legal dates by month. |
+| Open growth planner | Opens the standard growth simulation. | Compare a proposed business change. |
+| Explore this change on a growth milestone | Opens Growth planner with a hiring, branch or export suggestion prefilled. | Start a review without typing the same idea again. |
+| History or a recent business-change row | Opens Change history. | See an employee-count change and its related impact. |
+| Record a business change | Opens the profile editor. | Record an event that really happened. |
+| All alerts | Opens Risks & alerts. | Review the complete list of issues. |
+| An early-warning row | Opens its task if linked, otherwise Risks & alerts. | Follow the warning to the relevant action. |
+
+The workflow strip at the bottom is also clickable. Business profile opens editing; Law check opens Applicable laws; Risks & dates opens Risks & alerts; Tasks & documents opens Tasks & deadlines; AI guidance opens chat; Progress & reports downloads the PDF report.
+
+**Example:** You see two priority actions and one upcoming renewal. Open the renewal first to confirm its actual expiry. Return to Priority actions, open each task, assign responsibility and set an internal preparation target. Marking a notice read will not reduce unfinished tasks; a real recorded completion is a separate action.
+
+## 8 Applicable laws and explanations
+
+Each card gives a supported screening outcome, a plain explanation, the first recommended action and missing facts. The current catalogue includes GST, EPF, ESI, POSH, Professional Tax, workplace registration, Udyam/MSME classification, IEC/export review and license-record review.
+
+| Outcome shown | Meaning in the app | What to do next |
+| --- | --- | --- |
+| Applies | The screening trigger is established on the supplied facts. Other implementation or individual employee details may remain. | Review the action and remaining conditions. |
+| May apply | Some conditions suggest coverage but require confirmation. | Gather the missing eligibility or exception information. |
+| Does not currently apply | The supported trigger is not established on the current facts. Continuing or special duties may still matter. | Keep the profile current and read any caveat. |
+| More information needed | Facts, jurisdiction or source coverage are insufficient for a supported conclusion. | Confirm the missing information rather than treating it as an exemption. |
+
+| Button or disclosure | What it does | Example |
+| --- | --- | --- |
+| Recheck current facts | Reruns the deterministic evaluation for saved facts. | Refresh screening after reviewing your profile; it does not fetch government registration status. |
+| Legal basis and conditions | Expands rule version, effective/review dates, jurisdiction, exceptions and timing caveats. | Check whether a state-specific source is available. |
+| View official source | Opens the card's linked authority in another tab. | Read the cited provision before taking action. |
+| Explain this result | Opens Copilot with a question about that legal domain. | Ask why EPF is showing for your business. |
+
+**Example:** A business with eight employees plans to hire more. The current card describes the saved business; the Growth planner comparison describes the proposed business. Read both instead of assuming the hypothetical result has already changed the saved finding. POSH committee work is tracked as an organizational task, not a government registration certificate.
+
+## 9 Tasks and tracking a new obligation
+
+Tasks & deadlines has tabs for Action list, Calendar and Registrations & licenses. Inside Action list, a second choice switches between the normal list and Smart compliance planning.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Action list tab | Shows recorded tasks and their timing. | Organize unfinished reviews. |
+| Smart compliance planning | Opens the resource-constrained scheduling tool. | Find work that fits the owner's available hours. |
+| Calendar tab | Opens the calendar and timeline. | Inspect dates by month. |
+| Registrations & licenses tab | Opens the certificate register. | Track a license expiry. |
+| Search tasks | Filters tasks by title or legal domain as you type. | Type EPF to find related work. |
+| Task status filter | Filters All, Pending, In progress, Completed, Overdue or Needs review. | Show unfinished reviews before a meeting. |
+| Review task | Opens that task's details, dates, evidence and action history. | See the document checklist before beginning. |
+| Track a dated obligation | Opens a form for a filing, payment or internal action. | Track a specific return period rather than only a general setup task. |
+| Add obligation for review | Saves the new obligation and its proposed date/reference for review. | Record a GSTR-3B obligation for a named period. |
+
+The new obligation form asks for its law/domain, name, filing period or event, preparation target, proposed statutory date and supporting reference. Entering a proposed date does not make it a verified legal deadline. An owner cannot select Overdue as a progress state; the app derives deadline states separately.
+
+**Example:** Create an obligation called “Review return preparation for the stated period.” Set your own preparation target before the proposed statutory date and include the relevant reference. Review the source and applicability through the appropriate trusted process before relying on an automatic legal-overdue conclusion.
+
+## 10 Task details progress evidence and completion
+
+Task details combine the reason, suggested records, next steps, completion state and centrally assessed timing. Read the distinction between a preparation target and a verified legal due date before editing or declaring completion.
+
+### Progress and responsibility
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Your progress selector | Selects Not started or In progress; completion is handled separately. | Mark document gathering In progress. |
+| More details preparation dates assignment and references | Expands responsibility, internal target, proposed legal date/reference and progress note. | Name your accountant as the responsible person. |
+| Save progress | Saves the progress draft and closes the dialog on success. | Record that payroll documents are being prepared. It does not file a return. |
+| Explain with Copilot | Opens chat with this task's title as context. | Ask for help understanding the task. |
+| Close | Closes task details without submitting another change. | Return to the action list. |
+
+Changing a legal date requires another source review. Entering a person's name is not an email invitation or an automatic assignment notification. A progress note is part of your action record; it does not prove work was completed.
+
+### Completion and evidence
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Submit completion | Opens the completion form. | Record work you actually performed outside the app. |
+| Amend completion declaration | Appears when a declaration already exists and opens an amendment form. | Correct an action date or clarify the declaration. |
+| Actual action completion date | Records when the action happened; future dates are rejected. | The action happened on the 28th even if you upload its proof on the 2nd. |
+| Completion declaration | Requires a description of the actual work performed. | State which policy or filing action was completed. |
+| Optional remarks | Adds supporting context. | Explain that an acknowledgement is being collected. |
+| Record completion declaration | Saves the actual date, declaration, remarks and selected evidence. | Record completion truthfully without claiming independent government verification. |
+| Cancel in the completion form | Hides the completion form without submitting it. | Continue gathering details first. |
+| Upload proof | Uploads a private task-linked file for an authenticated business. | Attach a PDF acknowledgement. Accepted types are PDF, PNG, JPEG, WebP and text, up to 2 MB. |
+| Evidence checkbox | Includes or excludes an existing attachment in the next completion submission. | Select the acknowledgement that supports this particular action. |
+| Evidence filename with download arrow | Downloads the file through an authorization-checked endpoint. | Open a saved acknowledgement during a review. |
+| Reopen for further work | Reveals the reopening reason field for a task with a completion declaration. | Begin a correction or additional review. |
+| Reopen and preserve history | Requires a reason of at least ten characters, reopens the task and retains prior completion history. | Explain why an earlier completion needs further work. |
+| Acknowledge for review | Appears for an eligible overdue issue not already acknowledged. Records awareness. | Confirm that you have seen a deadline issue while investigating it. The obligation remains open. |
+
+In the sample workspace, actual private evidence upload is replaced by an instruction to use the separate mock deadline demonstration. File selection/upload and the completion declaration are separate actions. Uploading evidence alone does not submit or confirm completion.
+
+### Details and action history
+
+| Disclosure or link | What it shows | Example |
+| --- | --- | --- |
+| More details possible fine or extra charges | Supported consequences, assumptions and any narrowly supported estimate. | Check whether an amount is actually supported or explicitly unestimated. |
+| Official supporting source | Opens the reference for the displayed consequence/date. | Verify the applicable conditions with an adviser. |
+| Action and deadline history | Shows progress, declarations, date changes, reviews and reopening history. | Explain why a task was reopened after an earlier declaration. |
+
+The app distinguishes owner declaration, submitted proof, reviewed proof and confirmed fulfillment. The ordinary owner interface does not include a button to certify independent legal fulfillment or perform the trusted-review stages. A missing upload alone is not treated as proof of a legal breach.
+
+## 11 Calendar deadline states and warnings
+
+The calendar shows recorded task dates. Preparation targets are internal working dates. Statutory dates require an appropriate source and applicability review before they support a legal-overdue conclusion. Dates are assessed using the app's India-time handling.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Previous month arrow | Moves back one month and clears the selected day. | Review last month's recorded actions. |
+| Next month arrow | Moves forward one month and clears the selected day. | Plan next month's work. |
+| Today | Returns to the current India-calendar month. | Recover your place after browsing future months. |
+| A day number | Filters the side list to that date. Clicking it again clears the day selection. | Inspect tasks dated on the 15th. |
+| A task in the calendar side list | Opens task details. | Compare its preparation target with its legal date. |
+| Review and resolve in a deadline banner or timeline | Opens the relevant task. | Record the actual action date or investigate the current status. Opening it does not resolve it. |
+
+A dot on a day indicates a recorded task date. Absence of a dot does not prove that the business has no obligations that day. Unknown deadlines remain unknown; an internal target being missed does not automatically create a legal fine.
+
+**Example:** Your preparation target was the 25th and the reviewed legal date was the 30th. Missing the 25th is a planning issue. If an action actually happened on the 28th and its proof was uploaded later, the actual completion date is considered separately from the upload timestamp. Any legal-overdue or late-completion treatment depends on supported date and applicability information.
+
+Monitoring runs when the workspace is opened or updated. A protected job endpoint exists for an externally configured scheduler, but continuous unattended monitoring is not automatically enabled. Dashboard alerts do not imply that email or WhatsApp was sent.
+
+## 12 Risks alerts and change history
+
+Risks & alerts presents unfinished tasks in priority order, along with other active notices. It can also show a current planning resource shortfall. High, Medium and Low describe the app's review/action priority logic; they are not AI-generated monetary penalties.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| A risk or unfinished issue card | Opens the associated task. | Investigate a high-priority coverage review. |
+| Review planning constraints | Opens Smart compliance planning when a current analysis has a shortfall or unknown feasibility. | Add available hours or revise preparation cost estimates. |
+| Mark read | Records that a notice has been read. | Remove its unread indicator after review. |
+| Mark unread | Restores an unread marker. | Keep a notice visible for a later review. |
+| Supporting source | Opens the notice's linked authority. | Inspect the basis for the alert. |
+| Change history shortcut or Business change history | Opens actual saved business changes and action history. | Review when turnover or headcount changed. |
+| Update your business in an empty history state | Opens profile editing. | Record the first real business change. |
+
+Business history records changed facts, time, actor and associated screening impacts. A hypothetical simulation does not create an actual business-change event. Completion/action history is shown separately within the same history area. Reading or acknowledging a notice does not complete its underlying requirement.
+
+## 13 Registrations licenses and renewal records
+
+This register stores owner-entered certificates separately from screening findings and tasks. It is useful for keeping a registration number, dates, status and expiry reminder preference in one place.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Add certificate | Opens an empty certificate form. | Add an actual business license. |
+| An existing certificate row | Opens that record for editing. | Correct a certificate number or expiry date. |
+| Type | Chooses Registration or License. | Distinguish an ongoing registration from an expiring license record. |
+| Associated legal domain | Associates the record with a supported domain. POSH is excluded from this certificate selector. | Associate a GST registration certificate with GST. |
+| Registration date and Actual expiry date if any | Store the dates you enter. | Enter the true license expiry rather than an assumed annual date. |
+| Reminder preference | Chooses 0, 7, 15, 30, 60 or 90 days before expiry. | Request an in-app reminder window of 30 days. |
+| Recorded status | Stores Pending, Active or Expired as an owner-recorded status. | Mark a newly received certificate Active. |
+| Save certificate | Saves the certificate record. | Enable date-based review and reminders on workspace access. |
+| Update declarations | Opens the business profile's registration declarations. | Reconcile a profile checkbox with the certificates you hold. |
+
+The visible expiry badge can identify an expired recorded date. Saving an Active status is not government verification. Do not invent an expiry for a registration that has no expiry or requires no renewal. The app specifically notes that Udyam does not require renewal. There is no certificate deletion button in the current form, and no government renewal is submitted by Save certificate.
+
+## 14 Growth planner workforce and law changes
+
+Use Growth planner before making a business decision. The Workforce & law changes tab compares the proposed facts with your saved business. The Financial impact tab estimates the additional costs from entered figures.
+
+### Workforce comparison controls
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Workforce & law changes | Shows the compliance simulation form. | Review hiring, a branch or exports. |
+| New total employees | Sets the planned final workforce, not the number of additional hires. | Eight current employees and a total of 50 means 42 additional people. |
+| Planned yearly turnover | Sets hypothetical annual turnover. | Preview a larger business scale without editing real turnover. |
+| Add a branch selector | Adds one hypothetical workplace in the selected state. | Review a proposed second-state branch. Its city/staffing still need confirmation. |
+| Plan to export | Sets export activity in the scenario. | Preview a first export transaction. |
+| Compare my growth plan | Validates and runs a read-only rule comparison. | View current-versus-planned screening results. |
+| More options activities investment and workplace details | Opens the full profile form inside the scenario. | Model several workplace allocations or equipment investment. |
+| Compare detailed plan | Runs the detailed scenario form. | Compare a state/activity change with explicit facts. |
+| Generate Growth Readiness Plan | Reveals preparation actions, missing information and source references for the simulated results. | Create a checklist before recruitment begins. |
+| Hide readiness plan | Collapses the generated checklist. | Return to the comparison. |
+| Supporting official source or Official source | Opens the reference attached to a result. | Inspect the legal basis behind a proposed review. |
+| Isolated judge example | Opens the separate sample Growth planner. | Demonstrate a change without editing the real business. |
+
+The before-and-after panel shows rule versions, jurisdictions, reasons, changed facts and proposed preparation tasks. Proposed tasks in this simulation are not automatically added to your real task list. The comparison preserves missing facts and continuing-coverage considerations.
+
+**Example:** With eight saved employees, enter 83 as the New total employees to simulate hiring 75 additional people. In chat you can instead say “hire 75 additional employees.” Clear wording prevents confusion between a new total and an addition. Check EPF, ESI and POSH screening conditions, employee eligibility and workplace allocation rather than treating headcount alone as a complete legal determination.
+
+## 15 Growth planner financial impact
+
+The financial tool estimates the additional gross wage cost of expansion. It separates gross pay from statutory contribution wage definitions. Existing payroll, recruitment, equipment, professional fees and unsupported contributions are not silently added as if known.
+
+The form asks for planned total employees, gross monthly wage per new hire, budget, start date, projection months and the month hiring begins. Starting wages and budgets are editable examples, not figures read from your accounts. Changing inputs clears the old projection so it is not presented as a current result.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Financial impact | Opens the projection form. | Compare the budget effect of expansion. |
+| Try 24 employees | Sets planned total to 24 and clears reviewed contribution cohorts. | Start the smaller sample expansion. |
+| Try 50 employees | Sets planned total to 50 and clears reviewed cohorts. | Compare a larger hiring target. |
+| Compare with half the hires starting two months later | Requests a staged-hiring alternative within the projection horizon. | Compare hiring all 16 people now with hiring eight now and eight later. |
+| Reviewed EPF / ESI cohort inputs | Expands optional reviewed contribution assumptions. | Add a confirmed eligible group rather than assuming everyone has the same statutory wages. |
+| Coverage and eligibility confirmation checkbox | Enables adding a reviewed cohort after you confirm the relevant bases and dated parameters. | Record an adviser-reviewed EPF cohort. |
+| Add reviewed cohort for month | Adds or replaces that scheme's cohort for the chosen hiring month. | Include a confirmed group in the employer-cost projection. |
+| Remove next to a cohort | Removes that optional contribution assumption. | Recalculate while eligibility is being reviewed. |
+| Calculate financial impact | Computes the projection, known budget gap and applicable comparison. | See monthly and horizon costs. |
+| Missing information and assumptions | Expands excluded costs and unresolved facts. | Understand why covered known cost is not a full affordability assurance. |
+| Contribution audit by month | Appears when contribution rows exist; shows supported or withheld amounts and their reasons. | Inspect why a future contribution estimate was excluded. |
+| Plan the preparation work | Opens Smart compliance planning. | Allocate people and hours to the compliance work that expansion creates. |
+
+### Worked example using fictional wages
+
+Assume the saved business has eight people and every new hire is paid INR 25,000 gross per month. Assume all new hires begin in month one of a six-month projection, with no confirmed contribution cohorts.
+
+| Planned total | Additional hires | Additional monthly gross wages | Six month gross wages |
+| --- | --- | --- | --- |
+| 24 | 16 | INR 400,000 | INR 2,400,000 |
+| 50 | 42 | INR 1,050,000 | INR 6,300,000 |
+
+For the 24-person scenario, a fictional INR 1,000,000 expansion budget is already INR 1,400,000 below the six-month gross cost, before unknown extras. This is useful evidence for staging recruitment or revising the budget. It does not establish that all legal costs are included. Hiring alone does not determine GST liability.
+
+## 16 Smart compliance planning
+
+Find this under Tasks & deadlines, then Smart compliance planning. The solver searches for a preparation schedule that respects budget, total available work hours, daily staff availability, task dependencies and supported finish constraints. Mandatory tasks and their prerequisites cannot be dropped to make a plan appear affordable.
+
+It supports up to 12 tasks, three people and a 14-day horizon with a bounded exact search. A search limit can leave feasibility unknown; it is not proof that no valid plan exists.
+
+### Input controls
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Judge example | Loads the fictional five-task planning example. | Learn the scheduling tool without using real legal dates or costs. |
+| Load my tasks | Loads unfinished, unarchived tasks when there are between one and 12. | Plan actual preparation work. Initial one-hour and zero-cost estimates must be replaced. |
+| Available preparation budget | Sets the maximum budget for selected work. | Enter the amount the owner can actually spend on preparation. |
+| Available work hours in total | Sets a total work-hour cap, separate from each person's daily availability. | Limit the plan to 20 combined hours. |
+| Planning horizon days and Working hours per day | Define the planning time grid within the supported limits. | Plan five days with four working hours per day. |
+| Staff availability and responsibility | Expands names and each person's available hours by day. | Set the accountant unavailable on day two. |
+| Add person | Adds a planning resource, up to three. | Allocate work between owner and accountant. This does not create an account. |
+| Dependencies | Expands prerequisite task checkboxes. | Require document preparation before a coverage review. |
+| Required checkbox | Marks a task as a hard requirement in the draft. Server validation also enforces confirmed requirements for actual tasks. | Ensure essential preparation cannot be omitted. |
+| Hours and Cost fields | Record task-duration and preparation-cost estimates. | Estimate a three-hour document exercise costing INR 1,500. These are not automatically statutory fees. |
+| Importance field | Scores optional work only; disabled for mandatory tasks. | Prioritize optional awareness work over optional record cleanup. |
+| Finish by | Edits fictional example finish days; actual-task dates are normalized from trusted records. | Explore a fictional day-three finish constraint. |
+| Person selector | Limits the task to one named person or any listed person. | Keep specialist preparation assigned to the accountant. |
+| Find a feasible plan | Runs the mathematical solver. | Produce a schedule or a specific shortfall explanation. |
+
+### Results and follow-up buttons
+
+| Control or result | Meaning and action | Example |
+| --- | --- | --- |
+| Feasible plan | Selected tasks fit the entered hard constraints. Optional-work optimality is reported separately. | Use the proposed staff schedule as a working plan. |
+| Resources cannot satisfy all hard constraints | The solver established infeasibility within the supported problem. | Increase hours or budget rather than quietly deleting required work. |
+| Search limit reached feasibility unknown | Search ended before proving feasibility or infeasibility. | Simplify the planning problem or review its constraints. |
+| Export analysis | Downloads the input and computed result as JSON. | Keep the planning assumptions for an adviser review. |
+| Save analysis for Copilot | Runs/saves a planning snapshot for the business. | Let chat explain the exact computed result later. |
+| Analysis saved | Indicates the current result was saved; the save button is disabled until inputs change. | Avoid confusing an unsaved draft with a saved snapshot. |
+| Explain chosen plan | Appears after save and opens chat with a question about the saved analysis. | Ask why optional tasks were selected or why resources fall short. |
+
+Saving an analysis does not complete tasks, save a new headcount, file documents or spend money. Relevant later business/task changes can make the saved analysis stale; rerun it before relying on the schedule. The UI has no general add-custom-task or remove-person button in this planning form; use the loaded task set and supported controls.
+
+### Worked scheduling example
+
+In the fictional judge example, three required tasks need INR 6,000 and ten hours in total, with document preparation preceding the later reviews. The five selected tasks can fit within the sample INR 12,000 and 20-hour limits using INR 9,500 and 17 hours. With only INR 2,000 and six hours, the required work is short by INR 4,000 and four hours. These are example preparation estimates, not government charges or legal deadlines.
+
+The owner can use this to identify a resource problem early. The solver provides the schedule and arithmetic; the AI can explain those results but does not invent a better score or alter the constraints.
+
+## 17 Ask Copilot live chat and every chat control
+
+Ask Copilot provides conversational explanations using the saved business and the active conversation. Authenticated chat reads the authorized workspace on the server. The model has read-only tools for business records, checked legal material, scenarios, supported calculators, gross wage estimates and saved planning analysis. It has no tool to change your business, file forms or complete tasks.
+
+The assistant is intended for Indian SME compliance and related business questions. Clearly unrelated requests should receive a scope explanation. A scope response generated by the live model is still a live response; it does not mean a local fallback was used.
+
+| Control or label | What it does or means | Example |
+| --- | --- | --- |
+| Ask a question tab | Opens the conversational assistant. | Ask why a finding matters. |
+| Tax & contribution tools tab | Opens the structured calculators. | Enter explicit invoice or contribution inputs. |
+| Question input | Accepts a question up to 2,000 characters. | Ask “What is my business name?” |
+| Send icon or Enter | Submits the question with business context and relevant conversation history. | Ask what happens if the team grows to 50. |
+| Loading message | Indicates the request is in progress. Sending is disabled while the current request runs. | Wait while Gemini reads a scenario result. |
+| New conversation | Starts a fresh conversation context and preserves older saved messages. | Begin a new topic without clearing all history. |
+| Clear history | Opens a confirmation prompt. | Decide whether to remove business chat messages. |
+| Cancel in the clear prompt | Keeps the history. | Back out of accidental deletion. |
+| Clear chat history | Confirms removal of chat history for that business. | Remove prior chat content without deleting tasks or the business profile. |
+| Retry | Resends a failed question using the same message ID. | Retry a temporary network/provider failure while reducing duplicate-answer risk. |
+| Copy and Copied | Copies the answer text; Copied briefly confirms success. | Share a brief explanation with your adviser. |
+| More details | Appears when a stored/local response has additional detail; expands it. | Read the full older local guidance. It is not a hidden live generation. |
+| Legal sources and verification dates | Expands the answer's source metadata and links. | Inspect review dates and jurisdiction. |
+| Review business findings | Opens Applicable laws. | Compare an explanation with the actual screening cards. |
+| Open growth simulator | Appears with a relevant scenario link and opens Growth planner. | Compare the scenario in the structured UI. |
+| What is POSH quick prompt | Sends that question immediately. | Understand a term before planning an action. |
+| Does EPF apply to my company quick prompt | Sends a saved-business applicability question. | Distinguish current facts from a planned expansion. |
+| What if I grow to 50 employees quick prompt | Sends a target-headcount scenario question. | Preview obligations at a new total of 50. |
+| Sign in or Set up business in a recovery error | Opens the appropriate recovery route when the session/workspace needs attention. | Reconnect to the correct account after a session expires. |
+| Offline judge mode checkbox | Available only in the sample workspace. Explicitly selects local algorithm/source guidance rather than live AI. It is off by default. | Demonstrate deterministic features during an internet outage. |
+
+A configured label means the server detected a key, not that every future request will succeed. Online AI answer or Online model response identifies a successful live response. Saved local guidance is visibly labeled as not generated by online AI. Old local messages remain old messages; they are not evidence that a newly failed request received an online answer.
+
+Live requests fail explicitly on unavailable credentials, provider outages, authentication problems or quota exhaustion. No local answer is silently substituted. Google daily-quota errors now identify the daily scope and reported request allowance when supplied by the provider.
+
+### Useful questions and expected behavior
+
+| User asks | What a useful answer should do |
+| --- | --- |
+| What is my company name | Use the current saved name and answer briefly. |
+| How many employees do I have | Use the saved count, not a previous hypothetical total. |
+| When did I start my business | Use the saved start date; say it is not recorded if blank. |
+| I plan to hire 75 additional employees | Add 75 to the saved count, review the scenario and explain the relevant conditions without saving it. |
+| Explain that in simple language | Use the active conversation to simplify the preceding answer. |
+| Does hiring more employees increase GST | Distinguish employee growth from GST turnover/supply/tax treatment. |
+| Explain my saved plan | Read the saved solver result and explain its actual constraints and any staleness. |
+| Write a cake recipe | Explain that the assistant is designed for SME compliance and related business questions. |
+
+The app supplies curated legal material and read-only tools; it is not an unrestricted legal database or a guarantee that current amendments were searched live. Missing wages, rates, eligibility, start dates or jurisdiction should produce clarification rather than invented facts.
+
+## 18 Tax and contribution calculators
+
+These forms run validated backend arithmetic and show assumptions and source references. They do not require Gemini to produce the calculation. They do not save a filing, update business turnover or send the form's payroll inputs to an online model.
+
+### Shared controls
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Calculate GST | Selects the GST form. | Estimate an invoice from explicit amounts and a known/assumed rate. |
+| Estimate Business Income Tax | Selects the supported income-tax estimator. | Review ordinary partnership or LLP income under the supported year. |
+| Calculate Employee Contributions | Selects one-employee EPF/ESI arithmetic. | Review a confirmed contribution wage base. |
+| Calculate estimate | Validates inputs and returns a breakdown or a needs-review result. | Get arithmetic without asking the AI to calculate it. |
+| Export calculation | Downloads the result and its source references as JSON. | Keep the assumptions used in an estimate. |
+| Assumptions inputs and official sources | Expands inputs, remaining credits, assumptions and source references. | Review the basis before using the figure. |
+| An official source link | Opens the cited authority. | Check the relevant provision. |
+
+### GST controls
+
+The GST form asks for the supply date, registration declaration, tax treatment, supplier state and legal place of supply. The legal place of supply may differ from the customer's address. Rate and HSN/SAC are not guessed from the business industry.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Ordinary supply, Verified exempt supply, Eligible zero-rated supply under LUT | Selects the entered tax-treatment assumption. | Use zero-rated treatment only when its legal conditions are established. |
+| Supply fields | Record description, amount, rate and optional HSN/SAC. | Enter INR 10,000 and an illustrative 18 percent rate. |
+| This amount already includes GST | Treats the entered amount as tax-inclusive. | Reverse-calculate a total price rather than adding tax again. |
+| Add another supply | Adds a line, up to 50. | Use separate lines for different supplied items or rates. |
+| Remove supply | Removes that line when more than one exists. | Correct an accidental duplicate. |
+| I verified HSN/SAC and rate | Records classification confirmation for the entered date. | Distinguish a verified rate from an assumption. |
+| Eligible credit and special conditions | Expands tax-head credits and special-scheme questions. | Review eligible IGST/CGST/SGST credits after reconciliation. |
+| I confirmed credit eligibility and required reversals | Confirms that entered credit assumptions were reviewed. | Avoid claiming unsupported input tax credit. |
+| Composition or another special scheme applies | Flags a case that ordinary arithmetic may not support. | Obtain a review result instead of misusing a standard invoice calculation. |
+| Reverse charge applies | Flags reverse-charge treatment for review. | Avoid treating all liabilities as ordinary forward-charge supply tax. |
+| Supply-by-supply breakdown | Expands each line's taxable amount, GST and total. | Check a multi-line invoice. |
+| Credit utilization | Shows supported allocation across tax heads when applicable. | See which credit offset which liability. |
+
+**Illustrative arithmetic:** INR 10,000 excluding GST at an entered 18 percent produces INR 1,800 GST and an INR 11,800 total. Entering INR 11,800 as tax-inclusive at the same assumed rate gives a taxable base of INR 10,000. This demonstrates arithmetic; it does not establish the legally correct rate for a product or service.
+
+### Income tax controls
+
+Type of taxpayer chooses Partnership, LLP, Company or Individual. Financial year selects a displayed year. The implemented numerical estimate supports ordinary-income partnerships and LLPs for FY 2025–26, under its stated assumptions. Displaying another choice does not mean that case is supported; unsupported cases return review information.
+
+Enter reconciled taxable income, not turnover. The reviewed-expenses/adjustments checkbox and ordinary-income-only checkbox confirm the estimator's assumptions. The result is annual tax before offsets such as TDS or advance tax and before unsupported interest. The app does not prepare or submit an income tax return.
+
+### Employee contribution controls
+
+Choose EPF or ESI and enter the contribution date and a confirmed statutory monthly wage base. The coverage and employee-eligibility checkboxes are separate because establishment coverage does not automatically establish each employee's treatment.
+
+For EPF, the rate-category selector offers the reviewed 12 percent category or 10 percent special category. EPS eligibility reveals a separate EPS wage-base field. For ESI, enter confirmed average daily wages and use the continuing-period checkbox only when appropriate. The final dated-parameters confirmation covers the wage definition, eligibility, rates and ceiling/options for the selected month.
+
+These are confirmation controls, not proof supplied by the app. Do not substitute gross pay for a statutory wage base without review. One employee is calculated at a time.
+
+### Legal knowledge register
+
+Legal knowledge and source register expands curated topic summaries. Filter legal sources searches topic names and keywords. Official source opens the authority; Provision and version expands its provision, publication/effective references, required facts and exceptions. A Needs review record is an information gap, not an automatically established obligation.
+
+## 19 Reports CSV import and account settings
+
+### Exports and imports
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Download PDF report or Download report | Downloads a readable saved-workspace report including supported task/deadline and planning information. | Review the business with an accountant. |
+| Export business data or Export structured JSON | Downloads the structured report data. | Analyze the current assessment in another tool. |
+| CSV template | Downloads a profile CSV based on the current business data. | Prepare a supported profile update in a spreadsheet. |
+| Import business CSV | Reads and validates a selected CSV under 200 KB and opens a review form. | Bring in a corrected profile value. |
+| Confirm CSV update | Commits the reviewed profile through the normal business-save process. | Apply an imported actual headcount change. |
+| Close dialog before confirming CSV | Leaves the import uncommitted. | Abandon an incorrect file. |
+
+Importing a CSV is a business-profile update, not a general restoration of all tasks, evidence and history. The JSON report is a structured export; there is no universal JSON restore button in the current UI. Keep downloaded business reports private.
+
+### Account settings
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Return to dashboard | Leaves account settings and returns to the workspace. | Continue reviewing tasks. |
+| Full name field | Changes the account display-name draft. | Correct the owner's displayed name. |
+| Save account details | Saves that display name. | Update the account identity label without changing the business name. |
+| Reset password | Opens recovery. | Request a password change through the configured recovery flow. |
+| Sign out | Ends the active session. | Protect access on a shared device. |
+
+Email is displayed as account information; this settings form does not include an email-change or business-deletion button. Changing the account name does not rename the business profile.
+
+## 20 Demo controls and the judge walkthrough
+
+Sample workspaces are separate from private signed-in data. Sample edits are stored in the browser and may remain until reset. Changing browser, clearing browser storage or switching samples can change what sample information you see.
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Business sample selector | Switches between the hackathon growth story, small IT services, manufacturing and interstate-expansion samples. | Demonstrate a different scenario without editing a real company. |
+| Reset this demo | Resets only the selected browser-local sample. | Start the eight-employee story again. |
+| Open isolated deadline demo | Opens the separate fictional deadline demonstration. | Explain overdue and actual completion behavior. |
+| Round-two judge walkthrough run without Gemini | Expands the offline mathematics demonstration within sample Growth planner. | Present the algorithm when the AI service is unavailable. |
+| Run the complete offline demonstration | Calculates the isolated 24/50 employee wage examples and feasible/infeasible sample schedules. | Show what remains functional without an AI key. |
+| Read measured benchmark | Opens the static benchmark report in another tab. | Review the published measurements and their limitations. It does not rerun a benchmark. |
+
+### Isolated deadline demonstration buttons
+
+| Control | What it does | Example |
+| --- | --- | --- |
+| Fictional obligation selector | Chooses the GSTR-3B nil-central-tax fixture or POSH example. | Compare a supported fictional fee formula with a case that has no numeric penalty estimate. |
+| Simulated legal deadline and Simulated current date | Set fictional dates in the demonstration. | Move the demonstration past its sample deadline. |
+| Run deadline evaluation | Evaluates that fictional scenario without saving it to your business. | Show the overdue-state explanation. |
+| Verified formula sources and conditions | Expands the demonstration's references and conditions. | Explain the narrow scope of its example calculation. |
+| Review and resolve | Moves focus to the mock completion date field. | Continue the demonstration; it does not itself resolve the task. |
+| Actual action completion date simulation | Records the hypothetical day work happened. | Show an on-time action with later proof submission. |
+| Include a mock acknowledgement | Adds a fictional supporting record when submitting mock completion. | Demonstrate the difference between action and upload dates. |
+| Submit mock completion | Recalculates the fictional scenario with the selected completion facts. | Explain completion states without uploading a real document. |
+
+These demonstrations do not change the computer clock, real legal calendar, real task list or real business profile. Their wages, costs, finish dates and mock evidence are explicitly fictional. The round-two offline explanation is algorithmic and labeled accordingly; it is not presented as a Gemini response.
+
+## 21 A practical day in the app
+
+### Example one planning a recruitment drive
+
+1. Open Business overview and confirm the saved employee count is eight.
+2. Open Growth planner and enter a New total employees value of 83 to model 75 additional hires.
+3. Select Compare my growth plan. Read the before-and-after findings and missing employee/workplace details.
+4. Select Generate Growth Readiness Plan and collect the suggested records.
+5. Open Financial impact. Enter reviewed wages, a realistic budget and the hiring month, then Calculate financial impact.
+6. Open Tasks & deadlines and Smart compliance planning to schedule preparation work within available time and budget. Replace starter estimates before relying on them.
+7. Save the analysis if you want Copilot to explain the exact schedule. Ask a follow-up in simple language.
+8. Only after recruitment actually changes the business, use Business Profile & Settings and Save business changes. Record actual progress and completion separately.
+
+This helps an owner discover preparation and budget gaps before committing to growth. It does not recruit workers, change government registrations or pay contributions automatically.
+
+### Example two managing a certificate expiry
+
+1. Open Registrations & licenses and select Add certificate.
+2. Enter the actual certificate name, number and expiry, then choose a reminder window and Save certificate.
+3. Review the overview's renewal count and in-app notices as the recorded expiry approaches.
+4. Complete the real renewal process outside the app.
+5. Edit the certificate record to reflect the new actual dates and record any associated task action.
+
+The benefit is visibility and follow-through. The reminder is based on entered records, not live verification of a government portal or automatic email delivery.
+
+### Example three reviewing a deadline issue
+
+1. Select Review and resolve in the deadline banner.
+2. Read the verified/proposed date distinction and check the actual action status.
+3. Use Acknowledge for review if appropriate while investigating; the obligation remains open.
+4. If the action was performed, submit its actual completion date and a truthful declaration with suitable evidence.
+5. Read Action and deadline history to understand what was recorded and what still needs trusted review.
+
+This avoids treating a late upload as automatically equivalent to a late filing, while preserving meaningful dates and prior history.
+
+## 22 Troubleshooting and operating limits
+
+| Situation | What it means | Next useful action |
+| --- | --- | --- |
+| Business not found or access denied | The requested business is unavailable to the current authenticated account, or the page is stale. | Follow the sign-in/workspace recovery shown by chat and confirm the correct account. Do not assume it is an AI-key issue. |
+| Server key is not configured | The running server cannot see the selected provider's key. | Ask the operator to check the private server environment and restart the correct app instance. |
+| Gemini unavailable or HTTP 503 | A live provider request failed or the service is overloaded. | Retry later. The app does not silently substitute a local reply. |
+| Daily quota exhausted or HTTP 429 from provider | Google reports an exhausted project/model allowance. | Inspect Google AI Studio usage/billing or wait for the quota reset. Replacing a key alone does not increase project quota. |
+| Local guidance shown | An older local message or explicitly selected offline sample mode is being displayed. | Read its provenance label. Keep offline mode unchecked when testing live sample chat. |
+| No start date recorded | The business profile does not contain that date. | Enter the real date if known; the AI should not invent it. |
+| No verified legal dates | No suitably reviewed dates exist in the current records. | Review sourced obligations; do not interpret the blank view as no legal duties. |
+| Calculator says review needed | One or more required facts, supported dates or supported treatments are missing. | Supply reviewed inputs or seek an adviser. Do not force an estimate by guessing confirmation answers. |
+| Planner says infeasible | Entered hard requirements do not fit supported constraints. | Review real resources and assumptions without removing confirmed mandatory work. |
+| Planner says feasibility unknown | Its bounded search did not prove an answer. | Simplify or review the problem; do not describe this as proven infeasibility. |
+| Stale planning analysis | Relevant workspace information changed since the snapshot. | Load/review inputs and rerun the plan. |
+| Evidence upload fails | File size/type/signature, authentication or ownership checks may have failed. | Use an accepted file under 2 MB in the correct private task. |
+| Password email unavailable | Recovery delivery has not been configured or failed. | Contact the operator; Gemini chat does not provide recovery email. |
+
+The app does not submit statutory filings, pay government amounts, register a business, verify every uploaded document, guarantee avoidance of notices or certify legal compliance. No user-facing button silently performs any of those operations. Missing jurisdiction and source coverage are shown as review gaps.
+
+## 23 Technical overview for demonstrations
+
+The interface uses Next.js App Router, TypeScript, React and Tailwind CSS with reusable UI components. The Next.js server also hosts the application API routes. NextAuth handles authenticated sessions. Current local persistence uses the SQLite adapter; a PostgreSQL path through Prisma is available in the repository. Prisma is a database toolkit that lets the server work with structured database models; it is not the AI model or the chat engine.
+
+The business database, uploaded evidence and rebuildable public legal-source index serve different purposes. The business database retains account/workspace data; the legal index supports public legal material. The live Gemini key is server-side configuration and must never be included in frontend code, exports or Git.
+
+| Module | Its job | Does it require the live AI service |
+| --- | --- | --- |
+| Authentication and workspace storage | Own-account access, saved facts and record isolation. | No |
+| Rule screening and change comparison | Versioned findings, missing facts and before-and-after explanations. | No |
+| Deadline monitoring | Assess supported dates and completion records on access/update. | No |
+| Calculators and finance projection | Validated arithmetic with assumptions and unsupported cases withheld. | No |
+| Smart planning solver | Search for a constrained preparation schedule. | No |
+| Gemini conversational assistant | Generate short, contextual answers and use authorized read-only tools. | Yes |
+| Explicit offline sample guidance | Limited labeled demonstration guidance. | No |
+| Optional password recovery delivery | Send reset email through the separately configured mail provider. | No Gemini dependency; its own delivery setup is required. |
+
+The current public interface does not include an administrator rule editor, automatic government-portal integration, team invitation flow, continuous scheduler setup screen, payment screen or production deployment wizard. Document these as possible future work rather than completed buttons.
+
+## 24 Quick operating checklist
+
+Before relying on an assessment, confirm that the saved company, location, headcount, turnover and activity are current. Read missing facts and source dates. Distinguish owner declarations from independently reviewed facts.
+
+Before saving anything, identify whether the button says Save business changes, Record completion declaration, Save certificate or Save analysis for Copilot. Each saves a different kind of record. Compare, Calculate and Find a feasible plan produce analysis; they do not update actual business facts.
+
+Before presenting the product, decide whether you are showing a private business, a browser-local sample, an offline algorithm walkthrough or a live Gemini conversation. Keep those modes clearly labeled. Use a New conversation for a fresh chat topic, and preserve real account data while demonstrating hypothetical growth.
+
+This guide was checked against the current dashboard, forms, task editor, calculators, growth tools, planning solver interface, demonstrations, authentication flow and chat implementation. It is a functional guide to this app version, not an independently updated statement of Indian law. No app code or business data was changed to prepare it.

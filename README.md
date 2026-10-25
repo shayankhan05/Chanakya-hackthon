@@ -58,3 +58,9 @@ HTTP checks create synthetic accounts and business records in the configured tes
 
 ## Current AI provider
 Gemini is currently active: `AI_PROVIDER=gemini`, server-only `GEMINI_API_KEY`, and `GEMINI_MODEL`. OpenRouter remains optional via explicit `AI_PROVIDER=openrouter` and its own key. No automatic provider or local fallback occurs for authenticated chat. See [Gemini setup](docs/GEMINI-SETUP.md).
+
+## Round-two engineering upgrade
+Constraint-aware preparation scheduling, exact payroll projections and versioned rule deltas now run without an AI key. See [engineering/formulation](docs/ROUND-TWO-ENGINEERING.md), [measured benchmark](docs/ROUND-TWO-BENCHMARK.md), and [judge walkthrough](docs/ROUND-TWO-DEMO.md). Run `npm run benchmark:round-two` to reproduce the 25 fictional constraint scenarios. The live app exposes the benchmark at `/round-two-benchmark.html`.
+
+### Sample chat mode
+Ask Copilot now requests the configured live Gemini model in the sample workspace by default. The explicit Offline judge mode checkbox uses labeled local guidance without provider calls. Live failures return an error; they never silently switch to local text. Anonymous live demo requests are rate limited and use only the submitted sample profile, not private account records. The deterministic scheduling and financial tools remain usable without AI.

@@ -43,7 +43,29 @@ test('Gemini failures remain explicit and sanitized',async()=>{
 
 test('native authentication reason is preserved without leaking credentials',()=>{const d=geminiFailure({status:401,message:JSON.stringify({error:{status:'UNAUTHENTICATED',details:[{reason:'ACCESS_TOKEN_TYPE_UNSUPPORTED'}],message:'PRIVATE-KEY'}})});assert.equal(d.code,'ACCESS_TOKEN_TYPE_UNSUPPORTED');assert.match(d.reason,/fresh Gemini API key/);assert.ok(!JSON.stringify(d).includes('PRIVATE-KEY'));});
 
+test('daily free-tier exhaustion reports the actual limit without exposing raw provider data',()=>{
+ const d=geminiFailure({status:429,message:JSON.stringify({error:{status:'RESOURCE_EXHAUSTED',message:'PRIVATE-KEY',details:[{violations:[{quotaId:'GenerateRequestsPerDayPerProjectPerModel-FreeTier',quotaValue:'20'}]},{retryDelay:'51570s'}]}})});
+ assert.equal(d.quotaScope,'daily');assert.equal(d.quotaLimit,20);assert.equal(d.retryAfterSeconds,51570);assert.match(d.reason,/daily request quota/);assert.ok(!JSON.stringify(d).includes('PRIVATE-KEY'));
+});
 
-test('transient generation failure retries and returns the online model response',async()=>{let attempts=0;const r=await generateGemini(async()=>{if(++attempts===1)throw Object.assign(Error('private provider details'),{status:503});return {text:'Live result'} as GenerateContentResponse;},{model:'fixture',contents:'Hello'},AbortSignal.timeout(1000));assert.equal(attempts,2);assert.equal(r.text,'Live result');});
-test('authentication failures and exhausted retry budget cannot silently fall back',async()=>{for(const status of [401,402,429,503]){let attempts=0;await assert.rejects(generateGemini(async()=>{attempts++;throw Object.assign(Error('failure'),{status});},{model:'fixture',contents:'Hello'},AbortSignal.timeout(1000)));assert.equal(attempts,status===503?3:1);}});
+
+test('transient generation failure retries and returns the online model response',async()=>{let attempts=0;const r=await generateGemini(async()=>{if(++attempts===1)throw Object.assign(Error('private provider details'),{status:503});return {text:'Live result'} as GenerateContentResponse;},{model:'fixture',contents:'Hello'},AbortSignal.timeout(5000));assert.equal(attempts,2);assert.equal(r.text,'Live result');});
+test('authentication failures and exhausted retry budget cannot silently fall back',async()=>{for(const status of [401,402,429,503]){let attempts=0;await assert.rejects(generateGemini(async()=>{attempts++;throw Object.assign(Error('failure'),{status});},{model:'fixture',contents:'Hello'},AbortSignal.timeout(5000)));assert.equal(attempts,status===503?3:1);}});
 test('broad growth question asks for clarification through the live model without speculative tool calls',async()=>{const w=demoWorkspace('judge'),before=JSON.stringify(w);const answer=await geminiConversation(w,'Growth of the company.',[],async p=>{assert.equal(p.config?.tools,undefined);assert.ok(JSON.stringify(p).includes('Phoenix Tech Solutions'));return {candidates:[{content:{role:'model',parts:[{text:'Do you mean more employees, higher turnover, or new branches?'}]}}]} as GenerateContentResponse;});assert.equal(answer.mode,'live');assert.equal(answer.scenario,undefined);assert.equal(JSON.stringify(w),before);});
+
+test('cancelling during overload backoff prevents another billable generation attempt',async()=>{
+ const controller=new AbortController();let attempts=0;
+ const pending=generateGemini(async()=>{attempts++;throw Object.assign(Error('Unavailable'),{status:503});},{model:'fixture',contents:'Hello'},controller.signal);
+ controller.abort();await assert.rejects(pending);assert.equal(attempts,1);
+});
+
+test('interactive Gemini 3.5 configuration keeps real tool calls and limits reasoning latency',async()=>{
+ const oldModel=process.env.GEMINI_MODEL;
+ try{process.env.GEMINI_MODEL='gemini-3.5-flash-lite';
+  const result=await geminiConversation(demoWorkspace('judge'),'What is my company name?',[],async p=>{
+   assert.equal(p.config?.thinkingConfig?.thinkingLevel,'MINIMAL');
+   assert.ok(p.config?.tools?.length);
+   return {candidates:[{content:{role:'model',parts:[{text:'Phoenix Tech Solutions.'}]}}]} as GenerateContentResponse;
+  });assert.equal(result.mode,'live');
+ }finally{if(oldModel===undefined)delete process.env.GEMINI_MODEL;else process.env.GEMINI_MODEL=oldModel;}
+});

@@ -1,0 +1,12 @@
+import {randomUUID} from 'node:crypto';
+import {writeFile} from 'node:fs/promises';
+import {demoWorkspace} from '../lib/workspace';
+import {judgePlan} from '../lib/planning/demo';
+const base=process.env.TEST_BASE_URL||'http://127.0.0.1:3001',w=demoWorkspace('judge');
+const results=[];const history:{role:'user'|'assistant';content:string}[]=[];
+for(const question of ['What is my company name?','What is POSH?','Explain that in simple language.','Write a recipe for chocolate cake.','Explain my saved constraint-aware compliance plan.']){
+ const start=Date.now(),response=await fetch(base+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json',origin:base},body:JSON.stringify({businessId:w.id,demoProfile:w.profile,question,requireLive:true,messageId:randomUUID(),history,demoPlanInput:question.includes('plan')?judgePlan():undefined}),signal:AbortSignal.timeout(65000)});const d=await response.json();if(response.ok){if(d.mode!=='live')throw Error('Demo live request silently returned a local response');if(question.includes('company name')&&!d.message.includes(w.profile.name))throw Error('Incorrect sample business context');if(question.includes('plan')&&!/Fictional planning example/.test(d.message))throw Error('Fictional plan label missing');history.push({role:'user',content:question},{role:'assistant',content:d.message});}else if(d.fallbackUsed!==false||d.liveSucceeded!==false)throw Error('Live failure must be explicit');
+ const result={question,status:response.status,mode:d.mode,error:d.error,providerStatus:d.providerStatus,liveSucceeded:response.ok&&d.mode==='live',message:d.message,durationMs:Date.now()-start};results.push(result);console.log(JSON.stringify(result));
+}
+const offline=await fetch(base+'/api/chat',{method:'POST',headers:{'Content-Type':'application/json',origin:base},body:JSON.stringify({businessId:w.id,demoProfile:w.profile,question:'Explain my saved constraint-aware compliance plan.',requireLive:false,demoPlanInput:judgePlan(),messageId:randomUUID()})});const local=await offline.json();if(!offline.ok||local.mode!=='knowledge-base')throw Error('Explicit offline judge mode is broken');console.log('PASS: explicit offline judge mode remains available.');
+const report={at:new Date().toISOString(),provider:'Configured server provider; key never read by this script',results,offlineModeVerified:true,allLivePassed:results.every(r=>r.liveSucceeded)};await writeFile('docs/demo-live-check.json',JSON.stringify(report,null,2)+'\n');if(!report.allLivePassed)process.exitCode=1;

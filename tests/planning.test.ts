@@ -1,0 +1,12 @@
+import {test} from 'node:test';
+import assert from 'node:assert/strict';
+import {judgePlan} from '../lib/planning/demo';
+import {optimizePlan,checkSchedule,planningSchema} from '../lib/planning/solver';
+import {benchmarkScenarios} from '../lib/planning/benchmark-scenarios';
+import {bruteForceOracle} from '../lib/planning/oracle';
+test('mandatory tasks and their prerequisites cannot be dropped for budget or hours',()=>{for(const patch of [{budget:'0'},{availableHours:0}]){const p={...judgePlan(),...patch},r=optimizePlan(p);assert.equal(r.status,'infeasible');assert.ok(r.shortfalls.length);assert.equal(r.schedule.length,0);assert.equal(r.mandatoryIds.length,3);}});
+test('optimizer outputs valid schedules and matches an independent exhaustive oracle on 25 reviewed fixtures',()=>{for(const row of benchmarkScenarios()){const r=optimizePlan(row.input),oracle=bruteForceOracle(row.input);assert.equal(oracle.feasible,row.expectedFeasible,row.id);assert.equal(r.status==='feasible',oracle.feasible,row.id);if(oracle.feasible){assert.equal(r.advisoryValue,oracle.advisoryValue,row.id);assert.equal(checkSchedule(row.input,r.schedule).valid,true,row.id);}}});
+test('solver is repeatable and does not modify inputs',()=>{const p=judgePlan(),before=JSON.stringify(p);const a=optimizePlan(p),b=optimizePlan(p);assert.deepEqual(a.schedule,b.schedule);assert.equal(a.advisoryValue,b.advisoryValue);assert.equal(JSON.stringify(p),before);});
+test('invalid values, cycles and unsupported sizes are rejected',()=>{for(const patch of [{budget:'-1'},{availableHours:-1},{days:0},{tasks:[]}])assert.throws(()=>optimizePlan({...judgePlan(),...patch}));const p=judgePlan();p.tasks[0].dependencies=['committee'];assert.throws(()=>optimizePlan(p),/cycle/);assert.throws(()=>planningSchema.parse({...judgePlan(),fictional:false}));});
+test('search limit is never reported as proven infeasibility',()=>{const r=optimizePlan(judgePlan(),0);assert.equal(r.status,'search-limit');assert.equal(r.optimal,false);});
+test('staff conflicts and conflicting verified finish windows are hard constraints',()=>{const p=judgePlan();p.tasks=p.tasks.slice(0,2).map(t=>({...t,dependencies:[],hours:4,dueDay:1}));assert.equal(optimizePlan(p).status,'infeasible');});
