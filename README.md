@@ -254,7 +254,7 @@ sequenceDiagram
     end
     Model-->>API: Contextual explanation
     API-->>UI: Answer, mode and source details
-    Note over API,UI: Live service failures return a clear error; no silent local substitution
+    Note over API,UI: Live service failures return a clear error without silent local substitution
 ```
 
 The configured live provider can use read-only tools to access the authorized profile, tasks, findings, certificates, business history, reviewed financial aggregates, legal excerpts and saved preparation plans. It can request deterministic calculations or a hypothetical growth simulation. **It has no business-record write tool.**
