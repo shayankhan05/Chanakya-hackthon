@@ -1,5 +1,13 @@
 # Submission release — 26 October 2026
 
+## Authorized production release update
+
+The owner verified the pre-release recovery snapshot and authorized the migration and release. The direct production connection was verified against the supplied Neon host and `neondb`. The existing growth-workspace migration was baselined; only the FinancialLedger and EvidenceFile migrations were applied. Prisma status passed and fingerprints of every pre-existing table were unchanged immediately after migration.
+
+A fictional production account passed public signup, login and fresh-session checks. Its workspace was verified in the same Neon database across independent connections, confirming that Vercel uses the intended database. Encrypted financial/evidence transaction probes passed and were rolled back. These pre-release checks authorize removal of the main deployment hold; deployment build and live financial smoke tests remain required before declaring the new features live.
+
+The sections below record the earlier source-only submission and hold, retained as release history.
+
 This report supersedes the earlier submission audit and GitHub release investigation, which record intermediate failures and test counts.
 
 ## Scope

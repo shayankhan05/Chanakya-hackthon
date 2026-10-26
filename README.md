@@ -2,7 +2,7 @@
 
 Indian SME growth and compliance decision support, built with Next.js 15, React 19, TypeScript, Tailwind, NextAuth, Prisma and configurable server-side Gemini/OpenRouter integrations.
 
-**Submission release:** latest financial features are source-tested; the public Vercel site remains on the previous deployment. Automatic deployments from `main` are held. See [current release status and safe publishing plan](docs/SUBMISSION-RELEASE.md). Do not treat the public site as a demonstration of the new financial features yet.
+Financial imports, transaction review and provisional annual forecasting include tested persistent storage adapters. See [release verification and publishing notes](docs/SUBMISSION-RELEASE.md) for deployment status and validation limits.
 
 ## Existing installation: start safely
 
