@@ -134,7 +134,24 @@ model BusinessWorkspace {
  revision Int @default(0)
  payload Json
  members BusinessMember[]
+ financialLedger FinancialLedger?
+ evidenceFiles EvidenceFile[]
  updatedAt DateTime @updatedAt
+}
+model FinancialLedger {
+ businessId String @id
+ business BusinessWorkspace @relation(fields:[businessId],references:[id],onDelete:Cascade)
+ revision Int @default(0)
+ ciphertext String @db.Text
+ updatedAt DateTime @updatedAt
+}
+model EvidenceFile {
+ id String
+ businessId String
+ business BusinessWorkspace @relation(fields:[businessId],references:[id],onDelete:Cascade)
+ ciphertext String @db.Text
+ createdAt DateTime @default(now())
+ @@id([businessId,id])
 }
 model BusinessMember {
  businessId String

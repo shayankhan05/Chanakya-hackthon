@@ -9,3 +9,16 @@ node_modules
 
 /.data/
 
+
+# Private deployment configuration and persistent application data.
+.env*
+!.env.example
+/.vercel/
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.db-wal
+*.db-shm
+**/uploads/

@@ -2,6 +2,8 @@
 
 Indian SME growth and compliance decision support, built with Next.js 15, React 19, TypeScript, Tailwind, NextAuth, Prisma and configurable server-side Gemini/OpenRouter integrations.
 
+**Submission release:** latest financial features are source-tested; the public Vercel site remains on the previous deployment. Automatic deployments from `main` are held. See [current release status and safe publishing plan](docs/SUBMISSION-RELEASE.md). Do not treat the public site as a demonstration of the new financial features yet.
+
 ## Existing installation: start safely
 
 Run from this project directory. Keep existing environment files and `.data/`; do not reset, reseed or migrate an existing business merely to start the application.
@@ -64,3 +66,7 @@ Constraint-aware preparation scheduling, exact payroll projections and versioned
 
 ### Sample chat mode
 Ask Copilot now requests the configured live Gemini model in the sample workspace by default. The explicit Offline judge mode checkbox uses labeled local guidance without provider calls. Live failures return an error; they never silently switch to local text. Anonymous live demo requests are rate limited and use only the submitted sample profile, not private account records. The deterministic scheduling and financial tools remain usable without AI.
+
+## Reviewed financial records
+
+Business Profile → Financial Records supports authenticated CSV / narrowly supported text-PDF imports, owner-reviewed classification, exact cash flow, provisional April–March forecasts and encrypted database storage. Forecasts never replace declared turnover or confirmed legal conclusions. See [implementation, privacy, deployment migration and jury steps](docs/FINANCIAL-RECORDS.md). Fictional samples are under `public/samples/`.

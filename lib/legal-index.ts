@@ -6,7 +6,7 @@ import {legalKnowledge,tokens,type LegalRecord} from './legal-knowledge';
 import {officialUrl} from './assistant-context';
 let database:DatabaseSync|undefined;
 export function chunkText(text:string,size=1000){const clean=text.replace(/\r\n/g,'\n').replace(/[ \t]+/g,' ').trim();const chunks:string[]=[];for(let start=0;start<clean.length;start+=size-150)chunks.push(clean.slice(start,start+size));return chunks;}
-export function legalIndex(){if(database)return database;const file=resolve(process.env.LEGAL_INDEX_PATH||'.data/legal-knowledge.sqlite');mkdirSync(dirname(file),{recursive:true});const d=new DatabaseSync(file);d.exec(`PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;
+export function legalIndex(){if(database)return database;const file=process.env.VERCEL==='1'?':memory:':resolve(process.env.LEGAL_INDEX_PATH||'.data/legal-knowledge.sqlite');if(file!==':memory:')mkdirSync(dirname(file),{recursive:true});const d=new DatabaseSync(file);d.exec(`PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;
  CREATE TABLE IF NOT EXISTS legal_documents(id TEXT PRIMARY KEY,version INTEGER NOT NULL,metadata TEXT NOT NULL,hash TEXT NOT NULL,status TEXT NOT NULL,reviewer TEXT);
  CREATE VIRTUAL TABLE IF NOT EXISTS legal_chunks USING fts5(documentId UNINDEXED,text,tokenize='unicode61');`);
  database=d;for(const record of legalKnowledge)indexDocument(record,record.topic+'\n'+record.explanation+'\n'+record.keywords.join(' '),'Curated repository');return d;}

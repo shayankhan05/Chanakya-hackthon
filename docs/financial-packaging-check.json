@@ -1,0 +1,6 @@
+{
+  "worker": true,
+  "parser": true,
+  "pdfjs": true,
+  "allPresent": true
+}

@@ -1,3 +1,6 @@
+import {readFinancialLedger} from '@/lib/financial/repository';
+import {analyzeFinancials} from '@/lib/financial/analytics';
+import {indiaDate} from '@/lib/deadlines';
 import {optimizePlan} from '@/lib/planning/solver';
 import {planningBasis} from '@/lib/planning/workspace';
 import {NextResponse} from 'next/server';
@@ -31,6 +34,7 @@ export async function POST(req:Request){
    if('demoPlanInput' in data&&data.demoPlanInput){if(!data.demoPlanInput.fictional)throw new AppError('Anonymous planning explanations require a fictional input.');workspace.planningAnalysis={input:data.demoPlanInput,result:optimizePlan(data.demoPlanInput),at:new Date().toISOString(),basis:planningBasis(workspace)};}
    if('demoTasks' in data&&data.demoTasks)workspace.tasks=data.demoTasks.map(t=>({...t,key:t.id,priority:'Medium',assignee:'Demo owner',evidence:[],completedAt:null,eventId:null,period:'Demo',sourceUrl:'',sourceReference:''}));if(workspace.planningAnalysis)workspace.planningAnalysis.basis=planningBasis(workspace);
   }
+  if(userId&&/financial|cash flow|cash surplus|sales projection|projected.*sales|bank statement/i.test(data.question)){const {ledger}=await readFinancialLedger(userId,workspace.id);workspace={...workspace,financialSummary:analyzeFinancials(ledger,workspace,indiaDate())};}
   stage='answer';const conversationId=workspace.conversationId||'legacy',epoch=workspace.chatEpoch||0;
   const history=userId?workspace.messages.filter(m=>(m.conversationId||'legacy')===conversationId).slice(-20).map(m=>({role:m.role,content:m.content})):data.history||[];
   const configuration=aiConfiguration(),demoLive=!userId&&!data.legacy&&('requireLive' in data&&data.requireLive===true),requireLive=!!userId||demoLive;let response:AssistantAnswer;

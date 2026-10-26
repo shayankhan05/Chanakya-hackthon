@@ -1,0 +1,165 @@
+{
+  "at": "2026-10-26T02:44:03.255Z",
+  "base": "http://127.0.0.1:3001",
+  "runtime": "local production build",
+  "fixture": "Three isolated authenticated owners; only fictional financial records used; imported fixture data deleted at end.",
+  "results": [
+    {
+      "check": "Unauthenticated financial access rejected",
+      "passed": true
+    },
+    {
+      "check": "Cross-business reads rejected",
+      "passed": true
+    },
+    {
+      "check": "Explicit processing consent required",
+      "passed": true
+    },
+    {
+      "check": "Actual CSV endpoint parses without confirming a forecast",
+      "passed": true
+    },
+    {
+      "check": "Repeated import is idempotent, including retry with old revision",
+      "passed": true
+    },
+    {
+      "check": "Encrypted original download requires ownership",
+      "passed": true
+    },
+    {
+      "check": "Uncertain classifications cannot silently confirm",
+      "passed": true
+    },
+    {
+      "check": "Reviewed real endpoint computes expected ₹42 lakh proxy and advisory warning without changing turnover",
+      "passed": true
+    },
+    {
+      "check": "Confirmed records and calculations persist after a fresh authenticated login and reload",
+      "passed": true
+    },
+    {
+      "check": "Dashboard summary supplies the same financial figures warnings and generated review tasks",
+      "passed": true
+    },
+    {
+      "check": "Invalid negative nonnumeric and excess-precision figure inputs show validation errors",
+      "passed": true
+    },
+    {
+      "check": "Invalid consecutive financial year is rejected",
+      "passed": true
+    },
+    {
+      "check": "Zero Indian-grouped rupees and fractional decimals save against the explicitly selected year",
+      "passed": true
+    },
+    {
+      "check": "Stale financial writes rejected",
+      "passed": true
+    },
+    {
+      "check": "Weighted method executes on server",
+      "passed": true
+    },
+    {
+      "check": "Overlapping import reuses 36 transactions",
+      "passed": true
+    },
+    {
+      "check": "Actual text PDF endpoint and worker extraction",
+      "passed": true
+    },
+    {
+      "check": "Unsupported PDF and false PDF signatures rejected",
+      "passed": true
+    },
+    {
+      "check": "Oversized body rejected before parsing",
+      "passed": true
+    },
+    {
+      "check": "Cross-business deletion rejected",
+      "passed": true
+    },
+    {
+      "check": "Statement deletion removes the downloadable file and preserves shared rows",
+      "passed": true
+    },
+    {
+      "check": "Deleting a transaction invalidates completeness and forecast",
+      "passed": true
+    },
+    {
+      "check": "Reviewed supply figure stored independently from declared turnover",
+      "passed": true
+    },
+    {
+      "check": "Delete all clears files transactions corrections and reviewed figures",
+      "passed": true
+    },
+    {
+      "check": "Financial workflows leave existing profile tasks and business-change history unchanged",
+      "passed": true
+    },
+    {
+      "check": "Separate April 3–September 28 sample imports without changing existing confirmed financial records",
+      "passed": true
+    },
+    {
+      "check": "Four complete confirmed months produce the exact INR 42,75,000 provisional annual estimate",
+      "passed": true
+    },
+    {
+      "check": "Fresh login and repeated reload GET preserve the INR 42,75,000 result and leave confirmed rows history and revision untouched",
+      "passed": true
+    },
+    {
+      "check": "Annualized estimate drives only provisional screening without changing declared facts legal tasks or history",
+      "passed": true
+    },
+    {
+      "check": "Invalid account labels receive a field-specific error",
+      "passed": true
+    },
+    {
+      "check": "Statement period outside transaction dates is rejected",
+      "passed": true
+    },
+    {
+      "check": "Unsupported CSV layouts fail explicitly",
+      "passed": true
+    },
+    {
+      "check": "Actual 2000-row single-amount CR/DR CSV import accepts common headers dates and unknown browser MIME",
+      "passed": true
+    },
+    {
+      "check": "All 2000 extracted transactions can be confirmed in one real request above the former JSON size limit",
+      "passed": true
+    },
+    {
+      "check": "Oversized financial JSON remains bounded",
+      "passed": true
+    },
+    {
+      "check": "Actual authenticated fictional evidence upload persists metadata",
+      "passed": true
+    },
+    {
+      "check": "Evidence HTTP download rejects unauthenticated and foreign-business access",
+      "passed": true
+    },
+    {
+      "check": "Private evidence download returns original bytes without public caching",
+      "passed": true
+    },
+    {
+      "check": "Evidence remains available after a new authenticated session",
+      "passed": true
+    }
+  ],
+  "allPassed": true
+}

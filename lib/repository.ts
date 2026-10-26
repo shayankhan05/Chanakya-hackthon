@@ -1,3 +1,4 @@
+import {usesPostgres} from './storage-config';
 import {mkdirSync} from 'node:fs';
 import {dirname,resolve} from 'node:path';
 import {randomUUID} from 'node:crypto';
@@ -7,7 +8,7 @@ import type {Workspace} from './domain';
 import {monitor} from './engine';
 export type Account={id:string;email:string;name:string;passwordHash:string|null;authVersion:number};
 export class AppError extends Error{constructor(message:string,public status=400){super(message);}}
-const postgres=()=>!!process.env.DATABASE_URL&&process.env.STORAGE_DRIVER!=='sqlite';
+const postgres=usesPostgres;
 let local:DatabaseSync|undefined;
 function sql(){if(process.env.NODE_ENV==='production'&&process.env.STORAGE_DRIVER!=='sqlite'&&!postgres())throw new AppError('Configure DATABASE_URL or explicitly select the persistent SQLite development adapter.',503);if(!local){const file=resolve(process.env.SQLITE_PATH||'.data/compliance.sqlite');mkdirSync(dirname(file),{recursive:true});local=new DatabaseSync(file);local.exec(`PRAGMA foreign_keys=ON; PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;
  CREATE TABLE IF NOT EXISTS accounts(id TEXT PRIMARY KEY,email TEXT UNIQUE NOT NULL,name TEXT NOT NULL,passwordHash TEXT,authVersion INTEGER NOT NULL DEFAULT 0);

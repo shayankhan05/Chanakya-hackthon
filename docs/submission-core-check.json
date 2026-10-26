@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-26T02:12:55.559Z",
+  "runtime": "local production",
+  "fixture": "Isolated synthetic audit account; no existing business altered",
+  "checks": [
+    "Real local signup and credentials login",
+    "Onboarding creates current core compliance findings and tasks",
+    "Actual hiring-to-50 simulation changes workforce screening without employee-driven GST change",
+    "Actual planner returns a feasible constraint-respecting plan",
+    "Actual planner identifies insufficient resources without dropping mandatory tasks",
+    "Growth and planning previews preserve saved profile tasks and business history"
+  ],
+  "passed": 6,
+  "failed": 0
+}
